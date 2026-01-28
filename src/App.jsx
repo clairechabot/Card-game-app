@@ -301,7 +301,14 @@ const CardCodex = () => {
       category: "Solo",
       players: "1 Player",
       blurb: "A French solitaire game where you build card sequences around a central 'tomb' of sixes.",
-      instructions: "Remove Jokers and advertisement cards. Deal cards one by one; place any 6 in the center and any 7 in the corners. Build the center piles downwards (6, 5, 4...) and the corner piles upwards (7, 8, 9...) by suit. Use a discard pile for unplayable cards and try to clear the deck.",
+      instructions: `Setup: Remove all Jokers and advertisement cards. Shuffle the deck.
+The Layout: Deal cards one by one. If you draw a 6, place it in the center. If you draw a 7, place it in the corners.
+Gameplay:
+• You are building a "tomb" in the center and "guards" in the corners.
+• Center Piles (The Tomb): Build downwards from 6 (6, 5, 4, 3, 2, Ace).
+• Corner Piles (The Guards): Build upwards from 7 (7, 8, 9, 10, J, Q, K).
+• Discard Pile: Cards that cannot be played immediately go into a discard pile. You can play the top card of the discard pile onto the layout whenever possible.
+Goal: Successfully play all cards into the sequences to complete the tomb and guards.`,
       videoUrl: "https://youtu.be/0jcmCQDrc4c",
       layout: "napoleon"
     },
@@ -311,7 +318,17 @@ const CardCodex = () => {
       category: "Solo",
       players: "1 Player",
       blurb: "A dungeon-crawler style game where numbered cards 'attack' and remove face card 'monsters.'",
-      instructions: "Separate face cards (monsters) from number cards/aces/jokers (attack cards). Deal monsters into rows, then draw three attack cards. Combine attack cards to equal or exceed the value of a monster (J=11, Q=12, K=13) and play a 'trigger' card of the same suit to remove the monster.",
+      instructions: `Card Values: Aces = 1. Number cards = Face Value. Jack = 11. Queen = 12. King = 13. Jokers = Wild (value up to 10).
+Setup: Split the deck into two piles:
+1. Monsters: All face cards (J, Q, K).
+2. Attack Cards: All numbers, Aces, and Jokers.
+• Deal the Monsters into three rows (first two rows face down, third row face up) to create four columns.
+• Draw three Attack Cards to form your hand.
+Gameplay:
+• Combine two Attack Cards from your hand to equal or exceed the value of a Monster (e.g., a 6 and 7 = 13, which kills a King).
+• The Trigger: To finish the attack, you must play a third card (the "trigger") that matches the suit of the Monster.
+• Discard used cards. You cannot draw new Attack Cards until you use or discard your current three.
+Goal: Eliminate all Monster cards from the board.`,
       videoUrl: "https://youtu.be/GbEkAfCqfTM",
       layout: "monster"
     },
@@ -321,7 +338,13 @@ const CardCodex = () => {
       category: "Solo",
       players: "1 Player",
       blurb: "A strategic solitaire game utilizing four temporary holding cells to organize cards into foundation piles.",
-      instructions: "Deal cards into eight columns. Build tableau columns downward in alternating colors. Move single cards to the four 'free cells' to open up moves. The goal is to move all cards to the four foundation piles in ascending order by suit.",
+      instructions: `Setup: Deal all cards face up into 8 columns. Cards should overlap so you can see values.
+Gameplay:
+• Tableau Building: Build columns downward in alternating colors (e.g., Red 6 on Black 7).
+• Free Cells: Use the four spaces in the top left to store one single card each temporarily.
+• Foundation Piles: Move Aces to the top right and build up by suit to King.
+• Moving Stacks: You can move stacks of sequenced cards, but the number of cards you can move at once equals the number of empty Free Cells plus one.
+Goal: Move all 52 cards to the foundation piles.`,
       videoUrl: "https://youtu.be/Ny-WfBjaiSo",
       layout: "freecell"
     },
@@ -331,7 +354,13 @@ const CardCodex = () => {
       category: "Solo",
       players: "1 Player",
       blurb: "The classic patience game of building four suited piles from Ace to King.",
-      instructions: "Deal seven piles with the top card face up. Build tableau columns downward using alternating colors (e.g., black 8 on red 9). Draw from the remaining deck to find cards. Move cards to the top foundation piles starting with Aces, continuing sequentially to Kings.",
+      instructions: `Setup: Deal 7 piles. Pile 1 has 1 card, Pile 2 has 2, etc. The top card of each pile is face up; cards underneath are face down.
+Gameplay:
+• Tableau: Build downward in alternating colors (e.g., Black 8 on Red 9).
+• Foundations: Move Aces to the top and build up by suit sequentially.
+• Stockpile: Draw from the remaining deck (usually 3 cards at a time). Only the top card of the draw can be played.
+• Empty Spaces: Only Kings can fill an empty tableau space.
+Goal: Move all cards to the suited foundation piles.`,
       videoUrl: "https://youtu.be/9cFOr2T2eb8",
       layout: "klondike"
     },
@@ -342,7 +371,18 @@ const CardCodex = () => {
       category: "Two-Player",
       players: "2 Players",
       blurb: "A trick-taking game involving a special die used to raise the stakes and bluff your opponent.",
-      instructions: "Use a shortened deck (7s through Aces plus Jokers). Players have a hand and a 'display row' of cards. Play tricks by leading a card; the opponent must follow suit. Win the majority of tricks to score points equal to the current value of the 'Pop' die, which players can increase during the game.",
+      instructions: `Setup:
+• Cut the deck to 34 cards (use only 7s through Aces, plus 2 Jokers).
+• Trump Hierarchy: Big Joker (High), Little Joker, Big Jack (Jack of Trump suit), Little Jack (Jack of same color), Ace, King, Queen, 10...
+• Deal 7 cards to a "Display Pile" (face down) and 7 cards to a hand. Flip the top two cards of the Display Pile face up.
+• Place a die (Pop Cube) set to "1" on the Trump indicator card.
+Gameplay:
+• Lead a card from your hand or Display Row. Opponent must follow suit if possible.
+• The second player must play from the same area the leader played from (Hand or Display).
+• Winner of the trick leads the next. Refill Display Row spots immediately from the Display Pile.
+• Popping: A player can announce "Pop" to raise the point value of the round by 1. The opponent can "Fold" (lose immediately) or "Accept" (play on for higher stakes).
+Scoring: Win 4+ tricks to win the round points. If the loser won 3 tricks, they get 1 "consolation point".
+Goal: First to 7 (or 11) points.`,
       videoUrl: "https://youtu.be/ywlcN8DxBkE",
       layout: "duel"
     },
@@ -352,7 +392,16 @@ const CardCodex = () => {
       category: "Two-Player",
       players: "2 Players",
       blurb: "A classic rummy variation where players form sets and runs to minimize 'deadwood' points.",
-      instructions: "Deal 10 cards to each player. Draw from the stock or discard pile and discard a card each turn. Form melds (three of a kind or suited runs). End the round by 'knocking' when your unmatched cards (deadwood) total 10 points or less, or go 'Gin' by matching every card.",
+      instructions: `Setup: Deal 10 cards to each player. Place the rest face down (Stock) and flip one up (Discard).
+Gameplay:
+• Draw a card from Stock or Discard, then discard one card.
+• Form Melds:
+  • Sets: 3 or 4 cards of the same rank (e.g., three Kings).
+  • Runs: 3 or more consecutive cards of the same suit (e.g., 4-5-6 of Hearts).
+• Knocking: You can end the round if your unmatched cards ("Deadwood") total 10 points or less.
+• Gin: If you have zero deadwood, you go "Gin" for a 20-point bonus.
+Scoring: Points are awarded based on the difference in deadwood values. If the knocker loses the count, it is an "Undercut".
+Goal: Reach 100 points.`,
       videoUrl: "https://youtu.be/b1_HRYFyMvU",
       layout: "rummy"
     },
@@ -362,7 +411,13 @@ const CardCodex = () => {
       category: "Two-Player",
       players: "2 Players",
       blurb: "A fast-paced reflex game where players race to shed their cards simultaneously without taking turns.",
-      instructions: "Each player gets a hand of five and a draw pile. Two center piles are flipped face up. Simultaneously play cards from your hand that are one value higher or lower than the center cards (e.g., play a 5 or 3 on a 4). Refill your hand to five cards constantly until you run out.",
+      instructions: `Setup: Deal 5 cards to each hand. Place two draw piles of 15 cards each on the sides. Place two single cards face down in the center with two small piles of 5 cards next to them.
+Gameplay:
+• Flip the center cards simultaneously. There are no turns.
+• Play cards from your hand that are one value higher or lower than the center cards (looping King-Ace-2 is allowed).
+• Refill your hand from your draw pile to keep 5 cards at all times.
+• If stuck, both players flip a new card from the side piles simultaneously.
+Goal: Be the first to empty your hand and draw pile and yell "Speed!".`,
       videoUrl: "https://youtu.be/HgmnrYt-Xf4",
       layout: "duel"
     },
@@ -372,7 +427,12 @@ const CardCodex = () => {
       category: "Two-Player",
       players: "2 Players",
       blurb: "A simple luck-based game where higher cards capture lower cards until one player holds the entire deck.",
-      instructions: "Split the deck evenly. Both players flip their top card simultaneously. The higher card wins both. If cards tie, initiate a 'War': place three cards face down and one face up; the higher face-up card wins the entire pot.",
+      instructions: `Setup: Split the deck evenly between two players.
+Gameplay:
+• Both players flip their top card simultaneously.
+• High Card Wins: The winner collects both cards.
+• War: If cards tie, place three cards face down, then flip one face up. The higher face-up card wins all cards involved.
+Goal: Collect all 52 cards.`,
       videoUrl: "https://youtu.be/XO-wxomkv0c",
       layout: "duel"
     },
@@ -383,7 +443,15 @@ const CardCodex = () => {
       category: "Group",
       players: "3-4 Players",
       blurb: "A popular climbing game where players shed cards by beating the previous combination with a higher rank.",
-      instructions: "Deal the entire deck (13 cards each). The player with the 3 of Diamonds starts. Play singles, pairs, or 5-card poker hands (straights, flushes). The next player must play the same type of combination but with a higher rank (2 is usually the highest card). First to empty their hand wins.",
+      instructions: `Card Rankings: 3 is Lowest < 4 < ... < A < 2 is Highest. Suit order: Diamonds (Low) < Clubs < Hearts < Spades (High).
+Setup: Deal 13 cards to each player (entire deck).
+Gameplay:
+• Player with 3 of Diamonds starts.
+• Play a combination: Single, Pair, Triple, or 5-Card Group (Straight, Flush, Full House, Four of a Kind, Straight Flush).
+• Next player must play the same number of cards with a higher rank/value (e.g., a higher pair beats a lower pair).
+• 5-Card Hierarchy: Straight < Flush < Full House < Four of a Kind < Straight Flush.
+• If you pass, you can play again when the lead returns to you on a fresh pile.
+Goal: Be the first to empty your hand. Remaining players take penalty points based on card count (double penalty for 10+ cards).`,
       videoQuery: "How To Play Big Two: my FAVORITE hand shedding card game!",
       layout: "fourplayer"
     },
@@ -393,7 +461,13 @@ const CardCodex = () => {
       category: "Group",
       players: "4 Players",
       blurb: "A partnership trick-taking game that is the ancestor of modern Bridge.",
-      instructions: "4 players split into two teams. Deal 13 cards to each. The last card dealt determines the Trump suit. Players must follow the suit led if possible. The highest card (or highest Trump) wins the trick. Teams score points for every trick won over six tricks.",
+      instructions: `Setup: 4 players (2 teams). Deal 13 cards each. The final card dealt determines the Trump suit.
+Gameplay:
+• Player left of dealer leads. Players must follow suit if possible.
+• Highest card of the lead suit wins, unless a Trump card is played (Trump beats all non-trumps).
+• Winner of the trick leads the next.
+Scoring: Teams count tricks won. Each trick over 6 scores 1 point (e.g., 8 tricks = 2 points).
+Goal: First team to 5 points.`,
       videoUrl: "https://youtu.be/9v5UxlUg55Y",
       layout: "fourplayer"
     },
@@ -403,7 +477,12 @@ const CardCodex = () => {
       category: "Group",
       players: "3+ Players",
       blurb: "A chaotic reaction game where players race to grab a spoon once someone collects four of a kind.",
-      instructions: "Place one fewer spoon than players in the center. Pass cards quickly to the left. Once a player gets four of a kind, they grab a spoon. Everyone else must immediately grab a spoon; the person left without one gets a letter (S-P-O-O-N).",
+      instructions: `Setup: Place spoons in the center (one fewer than the number of players). Deal 4 cards to each player.
+Gameplay:
+• Dealer draws from deck, discards to left. Players pass cards quickly to the left in a circle.
+• The Grab: As soon as you get four of a kind, grab a spoon.
+• Once a spoon is touched, everyone must grab one immediately.
+Goal: Do not be the player left without a spoon. Losers gain a letter (S-P-O-O-N) and are eliminated when they spell the word.`,
       videoUrl: "https://youtu.be/DyCFkI-feL4",
       layout: "circle"
     },
@@ -413,7 +492,15 @@ const CardCodex = () => {
       category: "Group",
       players: "3+ Players",
       blurb: "A ladder-climbing game where the winner becomes 'President' and the loser becomes the 'Beggar' for the next round.",
-      instructions: "Deal all cards. Lead a single or set of cards (e.g., two 4s). Next players must match the quantity but play a higher rank. 2s are high. If you win the round, you become President and swap your worst card for the Beggar's best card in the next deal.",
+      instructions: `Setup: Deal all cards. Rank: 3 is Low, 2 is High.
+Gameplay:
+• Lead a single card or a set (e.g., pair of 4s).
+• Next player must match the quantity but play a higher rank (e.g., pair of 6s). You can pass if you cannot or choose not to play.
+• Clearing: If everyone passes, the last player to play clears the board and leads a new round.
+The Swap:
+• President (Winner): Gets the best seat and trades their worst card to the Scum/Beggar.
+• Beggar (Loser): Trades their best card to the President.
+Goal: Get rid of all cards first to become President.`,
       videoUrl: "https://youtu.be/n6UFbZ0jGWw",
       layout: "fourplayer"
     },
@@ -423,7 +510,12 @@ const CardCodex = () => {
       category: "Group",
       players: "2-5 Players",
       blurb: "A shedding game similar to Uno where you match rank or suit and use Eights as wild cards.",
-      instructions: "Deal 5 cards to each player. A discard pile is started. Players must play a card matching the rank or suit of the top card. Eights are wild and can be played on anything to change the suit. First to empty their hand wins.",
+      instructions: `Setup: Deal 5 cards. Flip top card of deck to start discard pile. (If 8, re-deal).
+Gameplay:
+• Play a card that matches the Rank or Suit of the top card.
+• Eights: 8s are wild. Play one at any time and declare a new suit.
+• If you cannot play, draw from the deck until you can play or you have drawn 5 cards.
+Goal: First to empty hand wins. Opponents score penalty points (8=50, Face=10, Number=Value).`,
       videoUrl: "https://youtu.be/pkKzzaR4Yb4",
       layout: "rummy"
     },
@@ -433,7 +525,14 @@ const CardCodex = () => {
       category: "Group",
       players: "2+ Players",
       blurb: "A fast slap-based game where players try to win the pile by slapping specific combinations.",
-      instructions: "Deal the whole deck evenly. Players flip one card onto a central pile. If a face card is played, the next person must play a face card or lose the pile. Anyone can 'slap' the pile to win it if they see a pair (e.g., 5 on 5) or a sandwich (e.g., 5, 7, 5).",
+      instructions: `Setup: Deal all cards evenly. Players hold stacks face down.
+Gameplay:
+• Players flip one card face up into the center.
+• Face Card Rule: If a J, Q, K, or A is played, the next player must play a face card/Ace within a specific number of chances (J=1, Q=2, K=3, A=4). If they fail, the person who played the face card wins the pile.
+• Slap Rule: Anyone can slap the pile to win it if:
+  • Double: Two identical cards (5, 5).
+  • Sandwich: Two matching cards with one between (5, 7, 5).
+Goal: Win all the cards in the deck.`,
       videoUrl: "https://youtu.be/1c4YPQTS35I",
       layout: "circle"
     },
@@ -443,7 +542,14 @@ const CardCodex = () => {
       category: "Group",
       players: "4 Players",
       blurb: "A partnership game where Spades are always the trump suit and players bid on how many tricks they will take.",
-      instructions: "Deal 13 cards. Partners bid the number of tricks they think they can win. Play tricks (must follow suit). Spades trump other suits. Teams score points if they meet their combined bid; missing the bid results in zero points.",
+      instructions: `Setup: 4 players (teams). Deal 13 cards.
+Bidding: Players look at hands and bid how many tricks they expect to take. Spades is always Trump.
+Gameplay:
+• Lead a suit (must follow suit). Spades beat all other suits. Highest card wins.
+Scoring:
+• Make bid: 10 points per trick bid + 1 point for extras (sandbags).
+• Miss bid: 0 points.
+Goal: First team to 500 points.`,
       videoUrl: "https://youtu.be/0aX1JfkAuQA",
       layout: "fourplayer"
     },
@@ -453,7 +559,12 @@ const CardCodex = () => {
       category: "Group",
       players: "2-6 Players",
       blurb: "The standard game of drawing and discarding to form matched sets and runs.",
-      instructions: "Draw a card each turn and discard one. Place 'melds' (three or more of a kind, or suited runs like 4-5-6) face up on the table. You can also add to existing melds. The round ends when a player empties their hand.",
+      instructions: `Setup: Deal 7-10 cards (depending on players). Flip one for discard.
+Gameplay:
+• Draw, Meld (optional), Discard.
+• Melds: 3+ of a kind or Suited Runs.
+• Lay Off: Add cards to existing melds on the table.
+Goal: Go out by melding/discarding all cards. "Go Rummy" (out in one turn) doubles points.`,
       videoUrl: "https://youtu.be/Wpo6z-qZ7Ko",
       layout: "rummy"
     },
@@ -463,7 +574,12 @@ const CardCodex = () => {
       category: "Group",
       players: "2+ Players",
       blurb: "A noisy reaction game for kids and families where matching cards triggers a race to yell 'Snap!'",
-      instructions: "Deal the whole deck. Players flip their top card into a personal pile. If two top cards on the table match, the first person to yell 'Snap!' wins both piles. The goal is to win all the cards.",
+      instructions: `Setup: Deal all cards. Players keep stacks face down.
+Gameplay:
+• Players flip cards into personal face-up piles.
+• Snap: If the top cards of any two piles match, the first to yell "Snap!" wins both piles.
+• Snap Pot: If players tie yelling, cards go to a center pot. Win the pot by matching it later and yelling "Snap Pot!".
+Goal: Win all 52 cards.`,
       videoUrl: "https://youtu.be/exUjTmnaWvs",
       layout: "duel"
     },
@@ -473,7 +589,12 @@ const CardCodex = () => {
       category: "Group",
       players: "3+ Players",
       blurb: "A trick-taking game where the hand size grows and shrinks each round.",
-      instructions: "Start with 1 card, go up to 7 (or 13), then back down to 1. Reveal a trump card each hand. Players bid tricks with fingers simultaneously. Score points for making your bid plus the tricks taken. Highest score at the end wins.",
+      instructions: `Setup: 4 players. Hand sizes change: 1 card, then 2, up to 7 (or 13), then back down to 1.
+Gameplay:
+• Flip a card to set Trump each hand.
+• Bidding: All players simultaneously hold up fingers to bid tricks.
+• Play tricks (follow suit, Trump wins).
+Scoring: 10 points for hitting exact bid + 1 point per trick taken.`,
       videoUrl: "https://youtu.be/KDsd6MG3t4w",
       layout: "fourplayer"
     },
@@ -483,7 +604,11 @@ const CardCodex = () => {
       category: "Group",
       players: "2+ Players",
       blurb: "A pairing game where players blindly draw from neighbors hoping to avoid the lone Joker.",
-      instructions: "Remove one Queen or add a Joker (the Old Maid). Deal all cards. Discard any pairs immediately. Take turns drawing one card from the player to your left. If it makes a pair, discard it. The loser is the person holding the Old Maid at the end.",
+      instructions: `Setup: Remove one Queen (or add a Joker). Deal all cards.
+Gameplay:
+• Discard all pairs from your hand immediately.
+• Offer your hand face down to the left. They draw one card. If it makes a pair, they discard it.
+Goal: Do not be holding the odd card (Queen/Joker) when all pairs are found.`,
       videoUrl: "https://youtu.be/2ygJGDp-eIo",
       layout: "circle"
     },
@@ -493,7 +618,12 @@ const CardCodex = () => {
       category: "Group",
       players: "1+ Players",
       blurb: "A memory game where players flip face-down cards to find matching pairs.",
-      instructions: "Lay all cards face down in a grid. Flip two cards; if they match (pair), keep them and go again. If not, flip them back over. The player with the most pairs wins.",
+      instructions: `Setup: Lay all cards face down in a grid.
+Gameplay:
+• Flip two cards.
+• Match: Keep the pair and go again.
+• No Match: Flip them back over; turn passes.
+Goal: Collect the most pairs.`,
       videoUrl: "https://youtu.be/s3Sz_QuCLoE",
       layout: "grid"
     },
@@ -504,7 +634,21 @@ const CardCodex = () => {
       category: "Drinking",
       players: "Group",
       blurb: "A social game where every card rank is assigned a specific rule or mini-game.",
-      instructions: "Spread cards in a circle. Players draw a card and do the action (e.g., Ace = Everyone drinks, 5 = Guys drink, 8 = Pick a mate). Drawing a King lets you make a new rule for the game.",
+      instructions: `Setup: Spread cards face down in a circle around a cup (King's Cup).
+Gameplay: Draw a card and perform the action:
+• Ace: Waterfall (Everyone drinks until player stops).
+• 2: You (Choose someone to drink).
+• 3: Me (You drink).
+• 4: Floor (Last to touch floor drinks).
+• 5: Guys drink.
+• 6: Chicks drink.
+• 7: Heaven (Hands up, last one drinks).
+• 8: Mate (Pick a partner to drink with you).
+• 9: Rhyme (Say a word, go around rhyming).
+• 10: Categories (e.g., Types of cereal).
+• Jack: Never Have I Ever.
+• Queen: Question Master (Answer with a question).
+• King: Make a rule.`,
       videoUrl: "https://youtu.be/Uy063oI9Gkk",
       layout: "circle"
     },
@@ -514,7 +658,12 @@ const CardCodex = () => {
       category: "Drinking",
       players: "Group",
       blurb: "A game of chance where players flip cards in a line hoping to avoid face cards.",
-      instructions: "Line up 10 cards face down. Flip one at a time. Number cards are safe. If you flip a face card, you drink and add more cards to the bridge (J=1, Q=2, K=3, A=4). You must cross the entire bridge to win.",
+      instructions: `Setup: Line up 10 cards face down.
+Gameplay:
+• Flip cards one by one.
+• Number Card: Safe. Move to next.
+• Face Card: Drink! Remove the card and add more cards to the bridge (J=1, Q=2, K=3, A=4).
+Goal: Flip the final card to finish the bridge.`,
       videoUrl: "https://youtu.be/StHP7NFOSxw",
       layout: "bridge"
     },
@@ -524,7 +673,11 @@ const CardCodex = () => {
       category: "Drinking",
       players: "Group",
       blurb: "A bluffing game using a pyramid layout where players assign drinks based on matching cards.",
-      instructions: "Deal a pyramid of face-down cards. Players have a hand of 4 cards. Flip pyramid cards row by row. If you have a match, assign drinks to opponents (amount increases by row). You can bluff if you don't have a match, but if caught, you drink double.",
+      instructions: `Setup: Deal a pyramid (rows of 1, 2, 3, 4, 5, 6 cards) face down. Deal 4 cards to each player.
+Gameplay:
+• Flip pyramid rows from bottom up.
+• Match: If you have a matching card, place it and assign drinks equal to the row number.
+• Bluffing: You can pretend to have a card. If challenged and caught, you drink double. If challenged and honest, challenger drinks double.`,
       videoUrl: "https://youtu.be/XGYv8UN_r1A",
       layout: "pyramid"
     },
@@ -534,7 +687,14 @@ const CardCodex = () => {
       category: "Drinking",
       players: "Group",
       blurb: "A guessing game where players try to predict the dealer’s card rank to avoid drinking.",
-      instructions: "A player tries to guess the rank of the top card. If wrong, the dealer says 'higher' or 'lower.' If the second guess is wrong, the player drinks. If the player guesses correctly, the dealer drinks. After 3 wrong turns, the dealer role passes.",
+      instructions: `Setup: Deck held by Dealer.
+Gameplay:
+• Guess the rank (e.g., "7").
+• Dealer says "Higher" or "Lower."
+• Guess again.
+• Wrong: Drink (amount based on house rules, usually diff on 1st vs 2nd guess).
+• Right: Dealer drinks.
+• 3 Wrong Guesses: Pass the deck to the next dealer.`,
       videoUrl: "https://youtu.be/M_9aW1ZGgS4",
       layout: "rummy"
     },
@@ -545,7 +705,12 @@ const CardCodex = () => {
       category: "Skills",
       players: "Skill",
       blurb: "The professional method for randomizing a deck at a table.",
-      instructions: "Split the deck, riffle the corners together while face down, 'box' the deck (cut it onto itself), riffle again, and cut using a cut card to ensure the bottom card isn't seen.",
+      instructions: `Technique:
+1. Split deck flat on table.
+2. Riffle corners together.
+3. Box: Strip 1/3 of deck and place on top (cut).
+4. Riffle again.
+5. Cut using a "Cut Card" on bottom to hide the bottom card.`,
       videoUrl: "https://youtu.be/bkDC3JoRjSk"
     },
     {
@@ -554,7 +719,11 @@ const CardCodex = () => {
       category: "Skills",
       players: "Skill",
       blurb: "The flashy 'waterfall' finish to a standard shuffle performed in the hands.",
-      instructions: "Riffle two halves of the deck together. Place thumbs on top and fingers below, bending the cards into an arch. Release pressure from the bottom fingers to let the cards cascade (bridge) together.",
+      instructions: `Technique:
+1. Split deck. Riffle corners together.
+2. Grip: Thumbs on top, fingers underneath.
+3. Bend: Push thumbs down and fingers up to create an arch (L-shape/90 degrees).
+4. Release: Slowly release finger pressure from the bottom to let cards cascade.`,
       videoUrl: "https://youtu.be/J5vT33Vo04s"
     },
     {
@@ -563,7 +732,11 @@ const CardCodex = () => {
       category: "Skills",
       players: "Magic",
       blurb: "A simple trick where you 'read minds' by secretly glimpsing the bottom card.",
-      instructions: "Secretly look at the bottom card. Deal cards or have the spectator shuffle. Force the bottom card (or simply guide them to it) and reveal it with a dramatic mind-reading presentation.",
+      instructions: `Method:
+1. Secretly glimpse the bottom card of the deck (e.g., turn deck around to show spectator "messy" shuffle).
+2. The Force: Deal cards or shuffle, but keep that known card at the bottom.
+3. Guide the spectator to pick that specific card or force it using a cut.
+4. Reveal by "reading their mind" (e.g., "I see a cherry color...").`,
       videoUrl: "https://youtu.be/9Y33eeJhyRM"
     },
     {
@@ -572,7 +745,10 @@ const CardCodex = () => {
       category: "Skills",
       players: "Magic",
       blurb: "A selected card magically rises to the top of the deck after being placed in the middle.",
-      instructions: "Riffle up the back of the deck and pick up two cards as one (Double Lift). Show the 'top' card (actually the second one). Place the top card (the indifferent one) into the middle. Reveal that the selection is still on top.",
+      instructions: `Method:
+1. Double Lift: Riffle up the back and pick up two cards as one. Show the face (spectator thinks it is the top card).
+2. Place the actual top card (which is indifferent) into the middle of the deck.
+3. The chosen card is still on top. Snap fingers and reveal it "rose" to the top.`,
       videoUrl: "https://youtu.be/9Y33eeJhyRM"
     },
     {
@@ -581,7 +757,12 @@ const CardCodex = () => {
       category: "Skills",
       players: "Magic",
       blurb: "A self-working trick where a reversed card finds the spectator's selection and the four Aces.",
-      instructions: "Pre-set the four Aces and a 5 of Hearts (face up) at the bottom. Have the spectator pick a card and place it on top. Cut the deck. Spread to find the face-up 5; count 5 cards down to find their selection, and reveal the surrounding cards are the Aces.",
+      instructions: `Setup: Place 4 Aces and a face-up 5 of Hearts at the bottom of the deck.
+Method:
+1. Spectator picks a card (don't show bottom). They put it on top.
+2. Cut the deck (sending the setup block on top of their card).
+3. Spread deck. The 5 is face up.
+4. Count 5 cards down. The 5th card is their selection. The 4 cards in between are the Aces.`,
       videoUrl: "https://youtu.be/9Y33eeJhyRM"
     },
     {
@@ -590,7 +771,11 @@ const CardCodex = () => {
       category: "Skills",
       players: "Magic",
       blurb: "The spectator says 'stop' while you riffle, landing exactly on their chosen card.",
-      instructions: "Use a Double Lift to show a card, then place the 'dummy' card into the middle. Riffle down the side of the deck. When they say stop, use a 'Slip Force' (holding the top card with fingers while pulling the rest) to make them stop on the original top card.",
+      instructions: `Method:
+1. Double Lift: Show the "top" card (actually 2 held as 1).
+2. Put the top card (dummy) in the middle. Spectator thinks their card is lost.
+3. Riffle Force/Slip Force: Riffle down the side. When they say "Stop," pull the top card (their actual card) onto the packet where they stopped using your fingers.
+4. Reveal they stopped exactly on their card.`,
       videoUrl: "https://youtu.be/NdCia_d1u5c"
     }
   ];
@@ -846,7 +1031,7 @@ const CardCodex = () => {
           
           <div className="bg-slate-900 border border-slate-700 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative z-50 animate-in fade-in zoom-in-95 duration-200">
             
-            <div className="sticky top-0 bg-slate-900/95 backdrop-blur border-b border-slate-800 p-6 flex justify-between items-start">
+            <div className="sticky top-0 bg-slate-900/95 backdrop-blur border-b border-slate-800 p-6 flex justify-between items-start z-10">
               <div>
                 <span className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded mb-2 inline-block ${getCategoryColor(selectedGame.category)}`}>
                   {selectedGame.category} • {selectedGame.players}
@@ -882,21 +1067,46 @@ const CardCodex = () => {
                 </div>
               )}
 
-              {/* Instructions Section */}
+              {/* Instructions Section - Updated for Bullet Points */}
               <div>
                 <h3 className="text-lg font-semibold text-emerald-400 mb-3 flex items-center gap-2">
                   <BookOpen size={20} />
                   How to Play
                 </h3>
-                <div className="text-slate-300 leading-7 space-y-4">
-                  {selectedGame.instructions.split('. ').map((sentence, index) => (
-                    sentence && (
-                    <p key={index} className="flex gap-3">
-                      <span className="text-slate-600 font-bold select-none">•</span>
-                      <span>{sentence.trim()}{sentence.endsWith('.') ? '' : '.'}</span>
-                    </p>
-                    )
-                  ))}
+                <div className="text-slate-300 leading-7 space-y-3">
+                  {selectedGame.instructions.split('\n').map((line, index) => {
+                    const trimmed = line.trim();
+                    if (!trimmed) return null;
+                    
+                    // Check for Headers (Ends with :)
+                    const isHeader = trimmed.endsWith(':') || 
+                                   trimmed.startsWith('Setup:') || 
+                                   trimmed.startsWith('Gameplay:') || 
+                                   trimmed.startsWith('Goal:') ||
+                                   trimmed.startsWith('Scoring:') ||
+                                   trimmed.startsWith('Technique:') ||
+                                   trimmed.startsWith('Method:');
+                                   
+                    if (isHeader) {
+                      return (
+                        <p key={index} className="font-bold text-white mt-4 mb-1 border-b border-slate-700/50 pb-1">
+                          {trimmed}
+                        </p>
+                      );
+                    }
+
+                    // Check for Sub-bullets
+                    const isSubBullet = trimmed.startsWith('◦') || trimmed.startsWith('▪') || /^\d+\./.test(trimmed) && trimmed.includes('•') === false;
+                    const isBullet = trimmed.startsWith('•') || /^\d+\./.test(trimmed);
+
+                    return (
+                      <p key={index} className={`flex gap-3 ${isSubBullet ? 'pl-6 text-slate-400 text-sm' : ''}`}>
+                        {isBullet && !isSubBullet && <span className="text-emerald-500 font-bold select-none min-w-[10px]">•</span>}
+                        {isSubBullet && <span className="text-slate-500 font-bold select-none min-w-[10px]">-</span>}
+                        <span>{trimmed.replace(/^[•◦▪]\s*/, '')}</span>
+                      </p>
+                    );
+                  })}
                 </div>
               </div>
 
