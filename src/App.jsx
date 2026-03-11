@@ -24,6 +24,532 @@ const CardCodex = () => {
     );
 
     switch (type) {
+
+      // ── 4-player trick table (Spades, Hearts, Euchre, Barbu) ─────────────
+      case 'tricktaking':
+        return (
+          <Container>
+            <div className="relative w-48 h-48">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 flex gap-1">
+                <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
+              </div>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-1">
+                <Card color="bg-emerald-600/20" /><Card color="bg-emerald-600/20" /><Card color="bg-emerald-600/20" />
+              </div>
+              <div className="absolute left-0 top-1/2 -translate-y-1/2"><Card color="bg-slate-700/50" /></div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2"><Card color="bg-slate-700/50" /></div>
+              {/* Current trick */}
+              <div className="absolute inset-0 m-auto w-20 h-20 border border-slate-700 rounded-lg bg-slate-800/60">
+                <div className="relative w-full h-full">
+                  <div className="absolute top-1 left-1/2 -translate-x-1/2 w-5 h-7 rounded-sm border border-slate-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-slate-300">N</div>
+                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-5 h-7 rounded-sm border border-emerald-600/40 bg-emerald-500/10 flex items-center justify-center text-[7px] font-bold text-emerald-300">S</div>
+                  <div className="absolute top-1/2 left-1 -translate-y-1/2 w-5 h-7 rounded-sm border border-slate-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-slate-300">W</div>
+                  <div className="absolute top-1/2 right-1 -translate-y-1/2 w-5 h-7 rounded-sm border border-slate-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-slate-300">E</div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute top-3 right-3 flex flex-col items-center gap-0.5">
+              <Card label="♠" color="bg-indigo-500/30" />
+              <span className="text-[8px] text-indigo-400 uppercase">Trump</span>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Trick Table</div>
+          </Container>
+        );
+
+      // ── 3-player trick table (Ninety-Nine, Nap, Skat) ────────────────────
+      case 'tricktaking3':
+        return (
+          <Container>
+            <div className="relative w-48 h-48">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 flex gap-1">
+                <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
+              </div>
+              <div className="absolute bottom-0 right-4 flex gap-1">
+                <Card color="bg-emerald-600/20" /><Card color="bg-emerald-600/20" />
+              </div>
+              <div className="absolute bottom-0 left-4 flex gap-1">
+                <Card color="bg-slate-700/50" /><Card color="bg-slate-700/50" />
+              </div>
+              <div className="absolute inset-0 m-auto w-20 h-16 border border-slate-700 rounded-lg bg-slate-800/60 flex items-center justify-center gap-2">
+                <div className="w-5 h-7 rounded-sm border border-slate-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-slate-300">N</div>
+                <div className="w-5 h-7 rounded-sm border border-slate-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-slate-300">W</div>
+                <div className="w-5 h-7 rounded-sm border border-emerald-600/40 bg-emerald-500/10 flex items-center justify-center text-[7px] font-bold text-emerald-300">E</div>
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">3-Player Table</div>
+          </Container>
+        );
+
+      // ── Cassino ───────────────────────────────────────────────────────────
+      case 'cassino':
+        return (
+          <Container>
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-[8px] text-slate-500 uppercase tracking-wider">Table cards</span>
+                <div className="flex gap-2">
+                  <Card label="4♥" color="bg-rose-800/30" />
+                  <Card label="5♣" color="bg-white/10" />
+                  <Card label="9♦" color="bg-amber-800/30" />
+                  <Card label="K♠" color="bg-slate-600/30" />
+                </div>
+              </div>
+              <div className="flex gap-6 items-end">
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex flex-col -space-y-9 opacity-50">
+                    <Card color="bg-white/5" /><Card color="bg-white/5" />
+                  </div>
+                  <span className="text-[8px] text-slate-500 mt-1">Captures</span>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex gap-1">
+                    <Card label="9♥" color="bg-emerald-600/20" />
+                    <Card label="4♠" color="bg-emerald-600/20" />
+                  </div>
+                  <span className="text-[8px] text-slate-500">Your hand</span>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Cassino Layout</div>
+          </Container>
+        );
+
+      // ── War ───────────────────────────────────────────────────────────────
+      case 'war':
+        return (
+          <Container>
+            <div className="flex items-center gap-6 md:gap-10">
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex flex-col -space-y-9">
+                  <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
+                </div>
+                <span className="text-[8px] text-slate-500 mt-2">P1 Deck</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="flex gap-3 items-center">
+                  <Card label="K♣" color="bg-blue-500/20" />
+                  <span className="text-slate-500 text-xs font-bold">VS</span>
+                  <Card label="9♥" color="bg-rose-500/20" />
+                </div>
+                <div className="flex gap-1 opacity-30">
+                  <Card color="bg-white/5" /><Card color="bg-white/5" /><Card color="bg-white/5" />
+                </div>
+                <span className="text-[8px] text-slate-600">War stake</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex flex-col -space-y-9">
+                  <Card color="bg-rose-900/40" /><Card color="bg-rose-900/40" /><Card color="bg-rose-900/40" />
+                </div>
+                <span className="text-[8px] text-slate-500 mt-2">P2 Deck</span>
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Battle Setup</div>
+          </Container>
+        );
+
+      // ── Crazy Eights ──────────────────────────────────────────────────────
+      case 'crazyeights':
+        return (
+          <Container>
+            <div className="flex items-end gap-4 md:gap-8">
+              <div className="flex gap-2 items-end">
+                <div className="flex flex-col items-center gap-1">
+                  <Card color="bg-blue-900/40" />
+                  <span className="text-[8px] text-slate-500">Stock</span>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <Card label="Q♣" color="bg-white/10" />
+                  <span className="text-[8px] text-slate-500">Discard</span>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="w-10 h-10 rounded-full bg-slate-800 border-2 border-emerald-500/40 flex items-center justify-center">
+                  <span className="text-lg text-emerald-400">♣</span>
+                </div>
+                <span className="text-[8px] text-emerald-500">Suit</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex gap-1">
+                  <Card label="Q♠" color="bg-white/10" />
+                  <Card label="8♦" color="bg-amber-500/30" className="border-amber-400/40" />
+                  <Card label="3♣" color="bg-white/10" />
+                </div>
+                <span className="text-[8px] text-slate-500">Hand <span className="text-amber-400">(8=Wild)</span></span>
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Crazy Eights</div>
+          </Container>
+        );
+
+      // ── President ─────────────────────────────────────────────────────────
+      case 'president':
+        return (
+          <Container>
+            <div className="relative w-44 h-44">
+              {[0, 60, 120, 180, 240, 300].map((deg, i) => (
+                <div
+                  key={i}
+                  className="absolute top-1/2 left-1/2 origin-center"
+                  style={{ transform: `translate(-50%, -50%) rotate(${deg}deg) translateY(-52px)` }}
+                >
+                  <div className={`w-8 h-11 rounded border ${
+                    i === 0 ? 'border-amber-500/60 bg-amber-700/30' :
+                    i === 3 ? 'border-slate-700/30 bg-slate-800/20' :
+                    'border-slate-600 bg-blue-900/30'
+                  } flex items-center justify-center`}>
+                    <span
+                      className={`text-[8px] font-bold ${i === 0 ? 'text-amber-400' : i === 3 ? 'text-slate-600' : 'text-slate-400'}`}
+                      style={{ transform: `rotate(${-deg}deg)` }}
+                    >
+                      {i === 0 ? '★' : i === 3 ? '✕' : ''}
+                    </span>
+                  </div>
+                </div>
+              ))}
+              <div className="absolute inset-0 m-auto w-14 h-14 rounded-full border-2 border-dashed border-slate-600 bg-slate-900/60 flex flex-col items-center justify-center gap-0.5">
+                <div className="flex -space-x-2">
+                  <div className="w-4 h-6 rounded-sm border border-slate-600 bg-white/10 flex items-center justify-center text-[6px] font-bold text-slate-300">K</div>
+                  <div className="w-4 h-6 rounded-sm border border-slate-600 bg-white/10 flex items-center justify-center text-[6px] font-bold text-slate-300">K</div>
+                </div>
+                <span className="text-[6px] text-slate-500">Pile</span>
+              </div>
+            </div>
+            <div className="absolute top-2 left-2 text-[8px] text-amber-400/70">★ President  ✕ Scum</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Climbing Game</div>
+          </Container>
+        );
+
+      // ── Cheat ─────────────────────────────────────────────────────────────
+      case 'cheat':
+        return (
+          <Container>
+            <div className="flex items-end gap-5 md:gap-8">
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex gap-0.5">
+                  <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
+                </div>
+                <span className="text-[8px] text-slate-500">P1</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex flex-col -space-y-9">
+                  <Card color="bg-white/5" /><Card color="bg-white/5" /><Card color="bg-rose-900/30" />
+                </div>
+                <div className="mt-2 px-2 py-0.5 rounded border border-rose-500/30 bg-rose-900/20">
+                  <span className="text-[8px] text-rose-400 font-bold">Cheat?</span>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex gap-0.5">
+                  <Card color="bg-emerald-600/20" /><Card color="bg-emerald-600/20" />
+                </div>
+                <span className="text-[8px] text-slate-500">You</span>
+              </div>
+            </div>
+            <div className="absolute top-3 left-1/2 -translate-x-1/2 text-[9px] text-slate-500 italic whitespace-nowrap">"Three Tens" (face down)</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Cheat Layout</div>
+          </Container>
+        );
+
+      // ── Durak ─────────────────────────────────────────────────────────────
+      case 'durak':
+        return (
+          <Container>
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex gap-1">
+                  <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
+                </div>
+                <span className="text-[8px] text-slate-500">Defender</span>
+              </div>
+              <div className="flex gap-3 items-start">
+                <div className="flex flex-col items-center">
+                  <Card label="K♠" color="bg-rose-700/20" />
+                  <Card label="A♠" color="bg-blue-600/20" className="-mt-6" />
+                </div>
+                <div className="flex flex-col items-center">
+                  <Card label="7♥" color="bg-rose-700/20" />
+                  <Card empty className="-mt-6" />
+                </div>
+              </div>
+              <div className="flex items-end gap-5">
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex gap-1">
+                    <Card color="bg-emerald-600/20" /><Card color="bg-emerald-600/20" />
+                  </div>
+                  <span className="text-[8px] text-slate-500">Attacker</span>
+                </div>
+                <div className="flex flex-col items-center gap-0.5">
+                  <Card color="bg-blue-900/40" />
+                  <Card label="♠" color="bg-indigo-500/20" className="-mt-3" />
+                  <span className="text-[8px] text-indigo-400">Trump</span>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Durak Setup</div>
+          </Container>
+        );
+
+      // ── Stops / Newmarket ──────────────────────────────────────────────────
+      case 'stops':
+        return (
+          <Container>
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-[8px] text-amber-400/70 uppercase tracking-wider">Boodle cards</span>
+                <div className="flex gap-2">
+                  {['K♠','K♥','K♦','K♣'].map((k, i) => (
+                    <div key={i} className="relative">
+                      <Card label={k} color="bg-amber-700/30" />
+                      <div className="absolute -top-1.5 -right-1.5 w-3 h-3 rounded-full bg-amber-400/60 border border-amber-500/50" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="flex gap-4 items-end">
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-[8px] text-slate-500 uppercase">Run</span>
+                  <div className="flex gap-1">
+                    <Card label="7♥" color="bg-white/10" />
+                    <Card label="8♥" color="bg-white/10" />
+                    <Card label="9♥" color="bg-white/10" />
+                    <Card empty label="?" />
+                  </div>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <Card color="bg-slate-700/40" />
+                  <span className="text-[8px] text-slate-500">Kitty</span>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Boodle Layout</div>
+          </Container>
+        );
+
+      // ── Piquet ────────────────────────────────────────────────────────────
+      case 'piquet':
+        return (
+          <Container>
+            <div className="flex items-center gap-4">
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-[8px] text-slate-500">Younger</span>
+                <div className="flex gap-0.5">
+                  {[1,2,3,4].map(i => <Card key={i} color="bg-blue-900/40" />)}
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-[8px] text-amber-400/70">Talon (8)</span>
+                <div className="flex flex-col -space-y-8">
+                  {[1,2,3,4].map(i => <Card key={i} color="bg-amber-700/30" />)}
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-[8px] text-slate-500">Elder (you)</span>
+                <div className="flex gap-0.5">
+                  {[1,2,3,4].map(i => <Card key={i} color="bg-emerald-600/20" />)}
+                </div>
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Piquet Setup</div>
+          </Container>
+        );
+
+      // ── Competitive patience (Spite & Malice, Racing Demon) ───────────────
+      case 'comppatience':
+        return (
+          <Container>
+            <div className="flex items-center gap-3 md:gap-5">
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex flex-col -space-y-9">
+                  <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-white/15" />
+                </div>
+                <span className="text-[8px] text-blue-400/70 mt-1">P1 Pile</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-[8px] text-slate-500 uppercase tracking-wider">Shared</span>
+                <div className="flex gap-1">
+                  {[1,2,3].map(i => (
+                    <div key={i} className="flex flex-col -space-y-8">
+                      <Card color="bg-white/5" /><Card color="bg-white/5" /><Card label="A" color="bg-emerald-700/30" />
+                    </div>
+                  ))}
+                </div>
+                <span className="text-[7px] text-emerald-600/70">Build A → K</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex flex-col -space-y-9">
+                  <Card color="bg-purple-900/40" /><Card color="bg-purple-900/40" /><Card color="bg-white/15" />
+                </div>
+                <span className="text-[8px] text-purple-400/70 mt-1">P2 Pile</span>
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Racing Layout</div>
+          </Container>
+        );
+
+      // ── Spit ──────────────────────────────────────────────────────────────
+      case 'spit':
+        return (
+          <Container>
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex gap-1 opacity-60">
+                {[2,3,1,2,3].map((depth, i) => (
+                  <div key={i} className="flex flex-col -space-y-8">
+                    {Array.from({length: Math.min(depth, 2)}).map((_, j) => (
+                      <Card key={j} color={j === Math.min(depth,2)-1 ? 'bg-white/15' : 'bg-blue-900/30'} />
+                    ))}
+                  </div>
+                ))}
+              </div>
+              <div className="flex gap-8 items-center">
+                <div className="flex flex-col items-center gap-0.5">
+                  <Card label="7" color="bg-white/10" />
+                  <span className="text-[7px] text-slate-500">Spit</span>
+                </div>
+                <span className="text-slate-600 text-sm">⟵ ⟶</span>
+                <div className="flex flex-col items-center gap-0.5">
+                  <Card label="8" color="bg-white/10" />
+                  <span className="text-[7px] text-slate-500">Spit</span>
+                </div>
+              </div>
+              <div className="flex gap-1">
+                {[1,3,2,1,3].map((depth, i) => (
+                  <div key={i} className="flex flex-col -space-y-8">
+                    {Array.from({length: Math.min(depth, 2)}).map((_, j) => (
+                      <Card key={j} color={j === Math.min(depth,2)-1 ? 'bg-emerald-600/20' : 'bg-blue-900/30'} />
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Spit Layout</div>
+          </Container>
+        );
+
+      // ── Napoleon at St Helena ─────────────────────────────────────────────
+      case 'napoleon':
+        return (
+          <Container>
+            <div className="flex items-start gap-1.5">
+              {[3,2,4,2,3].map((depth, i) => (
+                <div key={i} className="flex flex-col -space-y-8">
+                  {Array.from({length: depth}).map((_, j) => (
+                    <Card key={j} color={j === depth-1 ? 'bg-white/15' : 'bg-blue-900/30'} />
+                  ))}
+                </div>
+              ))}
+              <div className="flex flex-col gap-2 ml-2">
+                <div className="flex flex-col items-center gap-0.5">
+                  <Card label="A" color="bg-emerald-700/30" />
+                  <span className="text-[7px] text-emerald-600">↑ K</span>
+                </div>
+                <div className="flex flex-col items-center gap-0.5">
+                  <Card label="K" color="bg-rose-700/30" />
+                  <span className="text-[7px] text-rose-600">↓ A</span>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">St Helena</div>
+          </Container>
+        );
+
+      // ── Aces Up ───────────────────────────────────────────────────────────
+      case 'acesup':
+        return (
+          <Container>
+            <div className="flex items-start gap-4">
+              <div className="flex gap-2">
+                <div className="flex flex-col -space-y-8">
+                  <Card color="bg-white/5" /><Card color="bg-white/5" /><Card label="A♠" color="bg-emerald-700/30" />
+                </div>
+                <div className="flex flex-col -space-y-8">
+                  <Card color="bg-white/5" /><Card label="Q♥" color="bg-rose-700/20" />
+                </div>
+                <div className="flex flex-col -space-y-8">
+                  <Card color="bg-white/5" /><Card color="bg-white/5" /><Card label="J♥" color="bg-rose-700/20" />
+                </div>
+                <Card empty label="A♦" />
+              </div>
+              <div className="flex flex-col items-center gap-1 mt-auto">
+                <Card color="bg-blue-900/40" />
+                <span className="text-[8px] text-slate-500">Stock</span>
+              </div>
+            </div>
+            <div className="absolute top-3 left-3 text-[8px] text-slate-500 leading-4">Discard lower<br/>same-suit cards</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Aces Up</div>
+          </Container>
+        );
+
+      // ── Draw Poker ────────────────────────────────────────────────────────
+      case 'poker':
+        return (
+          <Container>
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex gap-8">
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex gap-0.5">
+                    <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
+                  </div>
+                  <span className="text-[8px] text-slate-500">P2</span>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex gap-0.5">
+                    <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
+                  </div>
+                  <span className="text-[8px] text-slate-500">P3</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-amber-500/30 bg-amber-900/20">
+                  {[1,2,3].map(i => <div key={i} className="w-3 h-3 rounded-full bg-amber-400/60" />)}
+                  <span className="text-[8px] text-amber-400 ml-1">Pot</span>
+                </div>
+                <div className="flex flex-col items-center gap-0.5">
+                  <Card color="bg-blue-900/40" />
+                  <span className="text-[7px] text-slate-500">Draw</span>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex gap-0.5">
+                  {['A♠','K♠','Q♠','J♠','T♠'].map((c,i) => <Card key={i} label={c} color="bg-emerald-600/20" />)}
+                </div>
+                <span className="text-[8px] text-slate-500">Your hand</span>
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Draw Poker</div>
+          </Container>
+        );
+
+      // ── Pontoon ───────────────────────────────────────────────────────────
+      case 'pontoon':
+        return (
+          <Container>
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex gap-1">
+                  <Card label="?" color="bg-slate-700/60" />
+                  <Card label="K♠" color="bg-white/10" />
+                </div>
+                <span className="text-[8px] text-slate-500">Banker</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                {[1,2,3].map(i => <div key={i} className="w-4 h-4 rounded-full bg-amber-400/60 border border-amber-500/50" />)}
+                <span className="text-[8px] text-amber-500 ml-1">Stakes</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex gap-1">
+                  <Card label="A♥" color="bg-emerald-600/20" />
+                  <Card label="K♣" color="bg-emerald-600/20" />
+                </div>
+                <div className="px-2 py-0.5 rounded-full bg-emerald-900/30 border border-emerald-500/30">
+                  <span className="text-[8px] text-emerald-400 font-bold">Pontoon! (21)</span>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Banking Layout</div>
+          </Container>
+        );
+
+      // ── Klondike Solitaire ────────────────────────────────────────────────
       case 'klondike':
         return (
           <Container>
@@ -49,186 +575,6 @@ const CardCodex = () => {
             </div>
             <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Klondike Setup</div>
           </Container>
-        );
-
-      case 'freecell':
-        return (
-          <Container>
-            <div className="w-full max-w-sm flex flex-col gap-6">
-              <div className="flex justify-between px-2">
-                <div className="flex gap-1">
-                   {[1, 2, 3, 4].map(i => <Card key={i} empty className="border-emerald-500/30" label="Free" />)}
-                </div>
-                <div className="flex gap-1">
-                   {[1, 2, 3, 4].map(i => <Card key={i} empty label="Fnd" />)}
-                </div>
-              </div>
-              <div className="flex justify-between px-2">
-                {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
-                  <div key={i} className="flex flex-col -space-y-8">
-                     <Card color="bg-white/10" />
-                     <Card color="bg-white/10" />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Freecell Setup</div>
-          </Container>
-        );
-
-      case 'napoleon':
-        return (
-          <Container>
-            <div className="grid grid-cols-3 gap-4 md:gap-8">
-              <Card label="7" color="bg-indigo-500/20" />
-              <div className="w-8 h-11 md:w-10 md:h-14"></div>
-              <Card label="7" color="bg-indigo-500/20" />
-
-              <div className="w-8 h-11 md:w-10 md:h-14 flex items-center justify-center">
-                 <div className="text-xs text-slate-500">Left</div>
-              </div>
-              <Card label="6" color="bg-emerald-500/20" className="border-emerald-500" />
-              <div className="w-8 h-11 md:w-10 md:h-14 flex items-center justify-center">
-                 <div className="text-xs text-slate-500">Right</div>
-              </div>
-
-              <Card label="7" color="bg-indigo-500/20" />
-              <div className="w-8 h-11 md:w-10 md:h-14 flex items-center justify-center">
-                 <div className="text-xs text-slate-500">Stock</div>
-              </div>
-              <Card label="7" color="bg-indigo-500/20" />
-            </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Tomb Layout</div>
-          </Container>
-        );
-
-      case 'pyramid':
-        return (
-          <Container>
-            <div className="flex flex-col items-center -space-y-6 md:-space-y-8 scale-90">
-              <Card color="bg-white/5" />
-              <div className="flex gap-2"><Card color="bg-white/5" /><Card color="bg-white/5" /></div>
-              <div className="flex gap-2"><Card color="bg-white/5" /><Card color="bg-white/5" /><Card color="bg-white/5" /></div>
-              <div className="flex gap-2"><Card color="bg-white/5" /><Card color="bg-white/5" /><Card color="bg-white/5" /><Card color="bg-white/5" /></div>
-              <div className="flex gap-2"><Card color="bg-white/5" /><Card color="bg-white/5" /><Card color="bg-white/5" /><Card color="bg-white/5" /><Card color="bg-white/5" /></div>
-            </div>
-             <div className="absolute bottom-4 left-4 flex gap-1">
-                 <Card label="Hand" color="bg-indigo-500/40" />
-                 <Card label="Hand" color="bg-indigo-500/40" />
-                 <Card label="Hand" color="bg-indigo-500/40" />
-             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Pyramid Setup</div>
-          </Container>
-        );
-
-      case 'bridge':
-        return (
-          <Container>
-            <div className="flex gap-1 overflow-hidden px-4">
-              {[1,2,3,4,5,6,7,8,9,10].map(i => (
-                <Card key={i} color="bg-blue-900/40" label={i} />
-              ))}
-            </div>
-            <div className="absolute top-4 text-xs text-slate-400 font-medium">Flip cards one by one to cross</div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Bridge Layout</div>
-          </Container>
-        );
-
-      case 'circle':
-        return (
-          <Container>
-            <div className="relative w-40 h-40">
-               {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
-                 <div key={i} className="absolute top-1/2 left-1/2 w-8 h-12 bg-blue-900/40 border border-slate-600 rounded-sm origin-center"
-                      style={{ transform: `translate(-50%, -50%) rotate(${deg}deg) translateY(-55px)` }} />
-               ))}
-               <div className="absolute inset-0 m-auto w-12 h-12 rounded-full border-2 border-dashed border-slate-600 flex items-center justify-center">
-                 <span className="text-[8px] text-center text-slate-400">Pile</span>
-               </div>
-            </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Circle Layout</div>
-          </Container>
-        );
-
-      case 'duel':
-        return (
-           <Container>
-             <div className="flex flex-col items-center gap-6">
-                <div className="flex gap-2 opacity-50"><Card label="P2" /><Card label="P2" /></div>
-                <div className="flex gap-8 items-center">
-                  <div className="flex gap-2">
-                    <Card empty label="Play" />
-                    <Card empty label="Play" />
-                  </div>
-                  <div className="h-px w-20 bg-slate-700"></div>
-                  <div className="flex gap-2">
-                    <Card color="bg-indigo-500/20" label="Deck" />
-                  </div>
-                </div>
-                <div className="flex gap-2"><Card label="You" color="bg-emerald-600/20" /><Card label="You" color="bg-emerald-600/20" /></div>
-             </div>
-             <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Duel Setup</div>
-           </Container>
-        );
-
-      case 'fourplayer':
-        return (
-          <Container>
-            <div className="relative w-48 h-48">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2"><Card label="N" /></div>
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2"><Card label="S" color="bg-emerald-600/20" /></div>
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 rotate-90"><Card label="W" /></div>
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 -rotate-90"><Card label="E" /></div>
-
-              <div className="absolute inset-0 m-auto w-16 h-16 border border-slate-700 rounded bg-slate-800/50 flex items-center justify-center">
-                <span className="text-[10px] text-slate-400">Trick</span>
-              </div>
-            </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">4-Player Table</div>
-          </Container>
-        );
-
-      case 'grid':
-        return (
-          <Container>
-            <div className="flex flex-col gap-3">
-              <div className="text-xs text-slate-400 text-center font-medium">Table Layout</div>
-              <div className="grid grid-cols-4 gap-2">
-                 {Array.from({length: 4}).map((_, i) => <Card key={i} color="bg-amber-700/30" label="T" />)}
-              </div>
-              <div className="flex justify-center gap-3 mt-2">
-                 {Array.from({length: 4}).map((_, i) => <Card key={i} color="bg-blue-900/40" label="H" />)}
-              </div>
-              <div className="text-[10px] text-center text-slate-500">T = Table  H = Hand</div>
-            </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Cassino Setup</div>
-          </Container>
-        );
-
-      case 'rummy':
-        return (
-           <Container>
-             <div className="flex items-center gap-12">
-                <div className="flex gap-4">
-                  <div className="relative">
-                    <Card color="bg-blue-900/40" label="Draw" />
-                  </div>
-                  <div className="relative">
-                    <Card color="bg-white/10" label="Disc" />
-                  </div>
-                </div>
-
-                <div className="p-4 border border-dashed border-slate-700 rounded-lg">
-                   <div className="flex gap-2">
-                     <Card color="bg-emerald-500/20" label="H" />
-                     <Card color="bg-emerald-500/20" label="H" />
-                     <Card color="bg-emerald-500/20" label="H" />
-                   </div>
-                   <div className="text-[10px] text-center mt-2 text-slate-500">Hand</div>
-                </div>
-             </div>
-             <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Standard Layout</div>
-           </Container>
         );
 
       default:
@@ -318,7 +664,7 @@ Scoring:
 • Nil: +50 if successful, −50 if failed.
 • Game: 500 points.`,
       videoUrl: "https://youtu.be/0aX1JfkAuQA",
-      layout: "fourplayer"
+      layout: "tricktaking"
     },
     {
       id: 2,
@@ -339,7 +685,7 @@ Scoring:
 • Premium bonuses for declaring or revealing bids face up before play.
 • Game: 100 points.`,
       videoQuery: "Ninety-Nine card game David Parlett rules how to play",
-      layout: "rummy"
+      layout: "tricktaking3"
     },
     {
       id: 3,
@@ -359,7 +705,7 @@ Scoring:
 • Shooting the Moon: taking all 14 penalty cards deducts 26 from your score (or adds 26 to all others).
 • Game ends when any player reaches 100; lowest score wins.`,
       videoQuery: "Hearts card game how to play rules",
-      layout: "fourplayer"
+      layout: "tricktaking"
     },
     {
       id: 4,
@@ -379,7 +725,7 @@ Scoring:
 • Failed bidder pays the same to each opponent.
 • Nap: wins 10 if successful, loses 5 if not. Wellington and Blucher carry higher stakes.`,
       videoQuery: "Nap Napoleon card game how to play",
-      layout: "rummy"
+      layout: "tricktaking3"
     },
     {
       id: 5,
@@ -400,7 +746,7 @@ Scoring:
 • Euchre (Makers fail to reach 3 tricks): opponents score 2 points.
 • Game: first to 10 points.`,
       videoQuery: "Euchre card game how to play rules",
-      layout: "fourplayer"
+      layout: "tricktaking"
     },
     {
       id: 6,
@@ -420,7 +766,7 @@ Scoring:
 • Positive points for finish order in Domino or tricks won in Trump.
 • Highest cumulative score after 28 deals wins.`,
       videoQuery: "Barbu card game how to play rules",
-      layout: "fourplayer"
+      layout: "tricktaking"
     },
     {
       id: 7,
@@ -439,7 +785,7 @@ Scoring:
 • Base value of the contract multiplied by matador multipliers (tops held or missing in sequence).
 • Soloist wins or loses the calculated value; Null contracts have fixed values (23, 35, 46, or 59).`,
       videoQuery: "Skat card game how to play rules Germany",
-      layout: "rummy"
+      layout: "tricktaking3"
     },
     // --- CARD-TAKING ---
     {
@@ -462,7 +808,7 @@ Scoring:
 • Each Ace: 1 point.
 • Total available: 11 points per deal.`,
       videoQuery: "Cassino card game how to play rules",
-      layout: "grid"
+      layout: "cassino"
     },
     {
       id: 9,
@@ -478,7 +824,7 @@ The Play:
 • War (tie): each player places three cards face down, then flips one face up. The highest face-up card wins all cards in play. Ties during a War repeat the process.
 Scoring: The player who captures all 52 cards wins.`,
       videoUrl: "https://youtu.be/XO-wxomkv0c",
-      layout: "duel"
+      layout: "war"
     },
     // --- SHEDDING ---
     {
@@ -495,7 +841,7 @@ The Play:
 • If unable to play, draw from stock until able.
 Scoring: Winner collects card values from all opponents' hands: Eights = 50, court cards = 10, number cards at face value.`,
       videoUrl: "https://youtu.be/pkKzzaR4Yb4",
-      layout: "rummy"
+      layout: "crazyeights"
     },
     {
       id: 11,
@@ -514,7 +860,7 @@ Scoring:
 • Social rule: Scum gives their two best cards to President; President gives back any two cards.
 • Roles carry over to determine seating and card-exchange order in the next deal.`,
       videoUrl: "https://youtu.be/n6UFbZ0jGWw",
-      layout: "circle"
+      layout: "president"
     },
     {
       id: 12,
@@ -531,7 +877,7 @@ The Play:
 • Challenged and truthful: the challenger takes the entire discard pile.
 Scoring: The first player to successfully shed all their cards wins.`,
       videoQuery: "Cheat Bullshit card game how to play rules",
-      layout: "circle"
+      layout: "cheat"
     },
     {
       id: 13,
@@ -548,7 +894,7 @@ The Play:
 • Defender successful: all cards discarded; defender becomes the next attacker.
 Scoring: Last player holding cards is the Durak and loses.`,
       videoQuery: "Durak Russian card game how to play rules",
-      layout: "rummy"
+      layout: "durak"
     },
     {
       id: 14,
@@ -565,7 +911,7 @@ The Play:
 • The player who plays a boodle card (same rank and suit as a layout King) collects its tokens.
 Scoring: First player out wins one chip per remaining card from each opponent plus the kitty.`,
       videoQuery: "Newmarket card game how to play rules",
-      layout: "circle"
+      layout: "stops"
     },
     // --- COLLECTING ---
     {
@@ -586,7 +932,7 @@ Scoring:
 • Pique (reaching 30 before opponent scores): bonus 30. Repique (in declarations alone): bonus 60.
 • Game: first to 100 points over a partie of six deals.`,
       videoQuery: "Piquet card game how to play rules Parlett",
-      layout: "rummy"
+      layout: "piquet"
     },
     // --- ORDERING ---
     {
@@ -638,7 +984,7 @@ The Play:
 • End your turn by discarding one card face up to one of your four personal discard piles.
 Scoring: Winner scores 5 points plus 1 per card remaining in the loser's riddance pile.`,
       videoQuery: "Spite and Malice card game how to play rules",
-      layout: "duel"
+      layout: "comppatience"
     },
     {
       id: 19,
@@ -655,7 +1001,7 @@ The Play:
 • If both players stall, simultaneously slap a new spit card onto each centre pile to restart play.
 Scoring: First to empty their stock piles slaps the smaller central pile; the opponent takes the larger.`,
       videoQuery: "Spit card game how to play rules speed",
-      layout: "duel"
+      layout: "spit"
     },
     {
       id: 20,
@@ -674,7 +1020,7 @@ Scoring:
 • +1 point per card on shared central foundations.
 • −2 points per card remaining in your off-pile at the end.`,
       videoQuery: "Racing Demon Nerts card game how to play rules",
-      layout: "klondike"
+      layout: "comppatience"
     },
     {
       id: 21,
@@ -690,7 +1036,7 @@ The Play:
 • Deal the next four cards from stock (one onto each column) when no discard is possible, and repeat.
 Scoring: Won if only the four Aces remain after the stock is exhausted. No redeals.`,
       videoQuery: "Aces Up solitaire patience how to play",
-      layout: "klondike"
+      layout: "acesup"
     },
     // --- VYING ---
     {
@@ -708,7 +1054,7 @@ The Play:
 • Showdown: remaining players reveal hands; best hand wins the pot.
 Scoring: Standard hand rankings from highest to lowest — Royal Flush, Straight Flush, Four of a Kind, Full House, Flush, Straight, Three of a Kind, Two Pair, One Pair, High Card.`,
       videoQuery: "Draw Poker five card how to play rules",
-      layout: "rummy"
+      layout: "poker"
     },
     // --- BANKING ---
     {
@@ -729,7 +1075,7 @@ Scoring:
 • Five-card trick (five cards totalling 21 or under): pays 2-to-1.
 • Banker wins all ties.`,
       videoQuery: "Pontoon Blackjack British card game how to play rules",
-      layout: "rummy"
+      layout: "pontoon"
     },
   ];
 
