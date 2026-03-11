@@ -6,6 +6,7 @@ const CardCodex = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGame, setSelectedGame] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [playerFilter, setPlayerFilter] = useState('All');
 
   // --- Visualizer Components ---
   const Card = ({ label, color = "bg-slate-700", className = "", empty = false }) => (
@@ -732,11 +733,31 @@ Scoring:
     },
   ];
 
+  const parsePlayerRange = (str) => {
+    const plus = str.match(/^(\d+)\+/);
+    if (plus) return [parseInt(plus[1]), Infinity];
+    const range = str.match(/^(\d+)[–\-](\d+)/);
+    if (range) return [parseInt(range[1]), parseInt(range[2])];
+    const single = str.match(/^(\d+)/);
+    if (single) return [parseInt(single[1]), parseInt(single[1])];
+    return [1, Infinity];
+  };
+
+  const PLAYER_FILTERS = ['All', '1', '2', '3', '4+'];
+
   const filteredGames = gamesData.filter(game => {
     const matchesCategory = activeCategory === 'All' || activeCategory === 'Home' || game.category === activeCategory;
     const matchesSearch = game.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          game.blurb.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    let matchesPlayers = true;
+    if (playerFilter !== 'All') {
+      const [min, max] = parsePlayerRange(game.players);
+      const n = parseInt(playerFilter);
+      matchesPlayers = playerFilter === '4+'
+        ? max >= 4
+        : min <= n && max >= n;
+    }
+    return matchesCategory && matchesSearch && matchesPlayers;
   });
 
   const getCategoryColor = (catId) => {
@@ -761,6 +782,7 @@ Scoring:
         setIsSidebarOpen(false);
         window.scrollTo(0,0);
         setSearchQuery('');
+        setPlayerFilter('All');
       }}
       className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
         activeCategory === id
@@ -929,6 +951,24 @@ Scoring:
           ) : (
             /* GAME GRID VIEW */
             <>
+              {/* Player Count Filter */}
+              <div className="flex items-center gap-2 mb-6 flex-wrap">
+                <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider mr-1">Players:</span>
+                {PLAYER_FILTERS.map(f => (
+                  <button
+                    key={f}
+                    onClick={() => setPlayerFilter(f)}
+                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                      playerFilter === f
+                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                        : 'bg-slate-800 text-slate-400 border border-slate-700 hover:border-slate-500 hover:text-slate-200'
+                    }`}
+                  >
+                    {f === 'All' ? 'Any' : f === '4+' ? '4+' : `${f}P`}
+                  </button>
+                ))}
+              </div>
+
               {filteredGames.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-in fade-in zoom-in-95 duration-300">
                   {filteredGames.map((game) => (
