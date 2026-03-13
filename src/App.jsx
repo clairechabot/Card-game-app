@@ -972,7 +972,7 @@ Scoring: Won if all eight foundations are completed before the stock is exhauste
     {
       id: 18,
       title: "Spite and Malice",
-      category: "Ordering",
+      category: "Shedding",
       players: "2 Players",
       blurb: "A competitive patience — both players race to empty their personal riddance pile by building shared centre stacks from Ace to King.",
       instructions: `Preliminaries: Two players. Two distinguishable packs. Twenty-six cards each form a face-down riddance pile with the top card face up. Five cards dealt to each hand.
@@ -989,7 +989,7 @@ Scoring: Winner scores 5 points plus 1 per card remaining in the loser's riddanc
     {
       id: 19,
       title: "Spit",
-      category: "Ordering",
+      category: "Shedding",
       players: "2 Players",
       blurb: "A simultaneous speed patience — both players race to shift cards onto two central piles with no turns, no waiting.",
       instructions: `Preliminaries: Two players. 52-card pack. Each player arranges their 26 cards into five face-down stock piles with only the top card of each pile face up.
@@ -1006,7 +1006,7 @@ Scoring: First to empty their stock piles slaps the smaller central pile; the op
     {
       id: 20,
       title: "Racing Demon",
-      category: "Ordering",
+      category: "Shedding",
       players: "2+ Players",
       blurb: "Frantic multiplayer patience — each player races their own full deck simultaneously to shed their off-pile onto shared central foundations.",
       instructions: `Preliminaries: Two or more players, each with a distinguishable 52-card pack. Deal 13 cards face down to a personal off-pile (top card face up); deal four cards face up as personal work-piles.
