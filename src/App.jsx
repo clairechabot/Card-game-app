@@ -9,16 +9,16 @@ const CardCodex = () => {
   const [playerFilter, setPlayerFilter] = useState('All');
 
   // --- Visualizer Components ---
-  const Card = ({ label, color = "bg-slate-700", className = "", empty = false }) => (
-    <div className={`w-8 h-11 md:w-10 md:h-14 rounded border ${empty ? 'border-dashed border-slate-600 bg-transparent' : 'border-slate-600 shadow-sm'} flex items-center justify-center text-[8px] md:text-[10px] font-bold text-slate-300 ${!empty ? color : ''} ${className}`}>
+  const Card = ({ label, color = "bg-zinc-700", className = "", empty = false }) => (
+    <div className={`w-8 h-11 md:w-10 md:h-14 rounded border ${empty ? 'border-dashed border-zinc-600 bg-transparent' : 'border-zinc-600 shadow-sm'} flex items-center justify-center text-[8px] md:text-[10px] font-bold text-zinc-300 ${!empty ? color : ''} ${className}`}>
       {label}
     </div>
   );
 
   const GameVisualizer = ({ type }) => {
     const Container = ({ children }) => (
-      <div className="w-full h-48 md:h-56 bg-emerald-950/30 rounded-xl border border-emerald-900/50 relative overflow-hidden flex items-center justify-center p-4 mb-6">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #34d399 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+      <div className="w-full h-48 md:h-56 bg-zinc-900/60 rounded-xl border border-zinc-700/50 relative overflow-hidden flex items-center justify-center p-4 mb-6">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #22d3ee 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         {children}
       </div>
     );
@@ -34,17 +34,17 @@ const CardCodex = () => {
                 <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
               </div>
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-1">
-                <Card color="bg-emerald-600/20" /><Card color="bg-emerald-600/20" /><Card color="bg-emerald-600/20" />
+                <Card color="bg-cyan-500/20" /><Card color="bg-cyan-500/20" /><Card color="bg-cyan-500/20" />
               </div>
-              <div className="absolute left-0 top-1/2 -translate-y-1/2"><Card color="bg-slate-700/50" /></div>
-              <div className="absolute right-0 top-1/2 -translate-y-1/2"><Card color="bg-slate-700/50" /></div>
+              <div className="absolute left-0 top-1/2 -translate-y-1/2"><Card color="bg-zinc-700/50" /></div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2"><Card color="bg-zinc-700/50" /></div>
               {/* Current trick */}
-              <div className="absolute inset-0 m-auto w-20 h-20 border border-slate-700 rounded-lg bg-slate-800/60">
+              <div className="absolute inset-0 m-auto w-20 h-20 border border-zinc-700 rounded-lg bg-zinc-800/60">
                 <div className="relative w-full h-full">
-                  <div className="absolute top-1 left-1/2 -translate-x-1/2 w-5 h-7 rounded-sm border border-slate-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-slate-300">N</div>
-                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-5 h-7 rounded-sm border border-emerald-600/40 bg-emerald-500/10 flex items-center justify-center text-[7px] font-bold text-emerald-300">S</div>
-                  <div className="absolute top-1/2 left-1 -translate-y-1/2 w-5 h-7 rounded-sm border border-slate-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-slate-300">W</div>
-                  <div className="absolute top-1/2 right-1 -translate-y-1/2 w-5 h-7 rounded-sm border border-slate-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-slate-300">E</div>
+                  <div className="absolute top-1 left-1/2 -translate-x-1/2 w-5 h-7 rounded-sm border border-zinc-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-zinc-300">N</div>
+                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-5 h-7 rounded-sm border border-cyan-500/40 bg-cyan-500/10 flex items-center justify-center text-[7px] font-bold text-cyan-300">S</div>
+                  <div className="absolute top-1/2 left-1 -translate-y-1/2 w-5 h-7 rounded-sm border border-zinc-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-zinc-300">W</div>
+                  <div className="absolute top-1/2 right-1 -translate-y-1/2 w-5 h-7 rounded-sm border border-zinc-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-zinc-300">E</div>
                 </div>
               </div>
             </div>
@@ -52,7 +52,7 @@ const CardCodex = () => {
               <Card label="♠" color="bg-indigo-500/30" />
               <span className="text-[8px] text-indigo-400 uppercase">Trump</span>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Trick Table</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Trick Table</div>
           </Container>
         );
 
@@ -65,18 +65,18 @@ const CardCodex = () => {
                 <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
               </div>
               <div className="absolute bottom-0 right-4 flex gap-1">
-                <Card color="bg-emerald-600/20" /><Card color="bg-emerald-600/20" />
+                <Card color="bg-cyan-500/20" /><Card color="bg-cyan-500/20" />
               </div>
               <div className="absolute bottom-0 left-4 flex gap-1">
-                <Card color="bg-slate-700/50" /><Card color="bg-slate-700/50" />
+                <Card color="bg-zinc-700/50" /><Card color="bg-zinc-700/50" />
               </div>
-              <div className="absolute inset-0 m-auto w-20 h-16 border border-slate-700 rounded-lg bg-slate-800/60 flex items-center justify-center gap-2">
-                <div className="w-5 h-7 rounded-sm border border-slate-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-slate-300">N</div>
-                <div className="w-5 h-7 rounded-sm border border-slate-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-slate-300">W</div>
-                <div className="w-5 h-7 rounded-sm border border-emerald-600/40 bg-emerald-500/10 flex items-center justify-center text-[7px] font-bold text-emerald-300">E</div>
+              <div className="absolute inset-0 m-auto w-20 h-16 border border-zinc-700 rounded-lg bg-zinc-800/60 flex items-center justify-center gap-2">
+                <div className="w-5 h-7 rounded-sm border border-zinc-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-zinc-300">N</div>
+                <div className="w-5 h-7 rounded-sm border border-zinc-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-zinc-300">W</div>
+                <div className="w-5 h-7 rounded-sm border border-cyan-500/40 bg-cyan-500/10 flex items-center justify-center text-[7px] font-bold text-cyan-300">E</div>
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">3-Player Table</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">3-Player Table</div>
           </Container>
         );
 
@@ -86,12 +86,12 @@ const CardCodex = () => {
           <Container>
             <div className="flex flex-col items-center gap-3">
               <div className="flex flex-col items-center gap-1">
-                <span className="text-[8px] text-slate-500 uppercase tracking-wider">Table cards</span>
+                <span className="text-[8px] text-zinc-500 uppercase tracking-wider">Table cards</span>
                 <div className="flex gap-2">
                   <Card label="4♥" color="bg-rose-800/30" />
                   <Card label="5♣" color="bg-white/10" />
                   <Card label="9♦" color="bg-amber-800/30" />
-                  <Card label="K♠" color="bg-slate-600/30" />
+                  <Card label="K♠" color="bg-zinc-600/30" />
                 </div>
               </div>
               <div className="flex gap-6 items-end">
@@ -99,18 +99,18 @@ const CardCodex = () => {
                   <div className="flex flex-col -space-y-9 opacity-50">
                     <Card color="bg-white/5" /><Card color="bg-white/5" />
                   </div>
-                  <span className="text-[8px] text-slate-500 mt-1">Captures</span>
+                  <span className="text-[8px] text-zinc-500 mt-1">Captures</span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex gap-1">
-                    <Card label="9♥" color="bg-emerald-600/20" />
-                    <Card label="4♠" color="bg-emerald-600/20" />
+                    <Card label="9♥" color="bg-cyan-500/20" />
+                    <Card label="4♠" color="bg-cyan-500/20" />
                   </div>
-                  <span className="text-[8px] text-slate-500">Your hand</span>
+                  <span className="text-[8px] text-zinc-500">Your hand</span>
                 </div>
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Cassino Layout</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Cassino Layout</div>
           </Container>
         );
 
@@ -123,27 +123,27 @@ const CardCodex = () => {
                 <div className="flex flex-col -space-y-9">
                   <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
                 </div>
-                <span className="text-[8px] text-slate-500 mt-2">P1 Deck</span>
+                <span className="text-[8px] text-zinc-500 mt-2">P1 Deck</span>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <div className="flex gap-3 items-center">
                   <Card label="K♣" color="bg-blue-500/20" />
-                  <span className="text-slate-500 text-xs font-bold">VS</span>
+                  <span className="text-zinc-500 text-xs font-bold">VS</span>
                   <Card label="9♥" color="bg-rose-500/20" />
                 </div>
                 <div className="flex gap-1 opacity-30">
                   <Card color="bg-white/5" /><Card color="bg-white/5" /><Card color="bg-white/5" />
                 </div>
-                <span className="text-[8px] text-slate-600">War stake</span>
+                <span className="text-[8px] text-zinc-600">War stake</span>
               </div>
               <div className="flex flex-col items-center gap-1">
                 <div className="flex flex-col -space-y-9">
                   <Card color="bg-rose-900/40" /><Card color="bg-rose-900/40" /><Card color="bg-rose-900/40" />
                 </div>
-                <span className="text-[8px] text-slate-500 mt-2">P2 Deck</span>
+                <span className="text-[8px] text-zinc-500 mt-2">P2 Deck</span>
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Battle Setup</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Battle Setup</div>
           </Container>
         );
 
@@ -155,18 +155,18 @@ const CardCodex = () => {
               <div className="flex gap-2 items-end">
                 <div className="flex flex-col items-center gap-1">
                   <Card color="bg-blue-900/40" />
-                  <span className="text-[8px] text-slate-500">Stock</span>
+                  <span className="text-[8px] text-zinc-500">Stock</span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
                   <Card label="Q♣" color="bg-white/10" />
-                  <span className="text-[8px] text-slate-500">Discard</span>
+                  <span className="text-[8px] text-zinc-500">Discard</span>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-1">
-                <div className="w-10 h-10 rounded-full bg-slate-800 border-2 border-emerald-500/40 flex items-center justify-center">
-                  <span className="text-lg text-emerald-400">♣</span>
+                <div className="w-10 h-10 rounded-full bg-zinc-800 border-2 border-cyan-500/40 flex items-center justify-center">
+                  <span className="text-lg text-cyan-400">♣</span>
                 </div>
-                <span className="text-[8px] text-emerald-500">Suit</span>
+                <span className="text-[8px] text-cyan-500">Suit</span>
               </div>
               <div className="flex flex-col items-center gap-1">
                 <div className="flex gap-1">
@@ -174,10 +174,10 @@ const CardCodex = () => {
                   <Card label="8♦" color="bg-amber-500/30" className="border-amber-400/40" />
                   <Card label="3♣" color="bg-white/10" />
                 </div>
-                <span className="text-[8px] text-slate-500">Hand <span className="text-amber-400">(8=Wild)</span></span>
+                <span className="text-[8px] text-zinc-500">Hand <span className="text-amber-400">(8=Wild)</span></span>
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Crazy Eights</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Crazy Eights</div>
           </Container>
         );
 
@@ -194,11 +194,11 @@ const CardCodex = () => {
                 >
                   <div className={`w-8 h-11 rounded border ${
                     i === 0 ? 'border-amber-500/60 bg-amber-700/30' :
-                    i === 3 ? 'border-slate-700/30 bg-slate-800/20' :
-                    'border-slate-600 bg-blue-900/30'
+                    i === 3 ? 'border-zinc-700/30 bg-zinc-800/20' :
+                    'border-zinc-600 bg-blue-900/30'
                   } flex items-center justify-center`}>
                     <span
-                      className={`text-[8px] font-bold ${i === 0 ? 'text-amber-400' : i === 3 ? 'text-slate-600' : 'text-slate-400'}`}
+                      className={`text-[8px] font-bold ${i === 0 ? 'text-amber-400' : i === 3 ? 'text-zinc-600' : 'text-zinc-400'}`}
                       style={{ transform: `rotate(${-deg}deg)` }}
                     >
                       {i === 0 ? '★' : i === 3 ? '✕' : ''}
@@ -206,16 +206,16 @@ const CardCodex = () => {
                   </div>
                 </div>
               ))}
-              <div className="absolute inset-0 m-auto w-14 h-14 rounded-full border-2 border-dashed border-slate-600 bg-slate-900/60 flex flex-col items-center justify-center gap-0.5">
+              <div className="absolute inset-0 m-auto w-14 h-14 rounded-full border-2 border-dashed border-zinc-600 bg-zinc-950/60 flex flex-col items-center justify-center gap-0.5">
                 <div className="flex -space-x-2">
-                  <div className="w-4 h-6 rounded-sm border border-slate-600 bg-white/10 flex items-center justify-center text-[6px] font-bold text-slate-300">K</div>
-                  <div className="w-4 h-6 rounded-sm border border-slate-600 bg-white/10 flex items-center justify-center text-[6px] font-bold text-slate-300">K</div>
+                  <div className="w-4 h-6 rounded-sm border border-zinc-600 bg-white/10 flex items-center justify-center text-[6px] font-bold text-zinc-300">K</div>
+                  <div className="w-4 h-6 rounded-sm border border-zinc-600 bg-white/10 flex items-center justify-center text-[6px] font-bold text-zinc-300">K</div>
                 </div>
-                <span className="text-[6px] text-slate-500">Pile</span>
+                <span className="text-[6px] text-zinc-500">Pile</span>
               </div>
             </div>
             <div className="absolute top-2 left-2 text-[8px] text-amber-400/70">★ President  ✕ Scum</div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Climbing Game</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Climbing Game</div>
           </Container>
         );
 
@@ -228,7 +228,7 @@ const CardCodex = () => {
                 <div className="flex gap-0.5">
                   <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
                 </div>
-                <span className="text-[8px] text-slate-500">P1</span>
+                <span className="text-[8px] text-zinc-500">P1</span>
               </div>
               <div className="flex flex-col items-center gap-1">
                 <div className="flex flex-col -space-y-9">
@@ -240,13 +240,13 @@ const CardCodex = () => {
               </div>
               <div className="flex flex-col items-center gap-1">
                 <div className="flex gap-0.5">
-                  <Card color="bg-emerald-600/20" /><Card color="bg-emerald-600/20" />
+                  <Card color="bg-cyan-500/20" /><Card color="bg-cyan-500/20" />
                 </div>
-                <span className="text-[8px] text-slate-500">You</span>
+                <span className="text-[8px] text-zinc-500">You</span>
               </div>
             </div>
-            <div className="absolute top-3 left-1/2 -translate-x-1/2 text-[9px] text-slate-500 italic whitespace-nowrap">"Three Tens" (face down)</div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Cheat Layout</div>
+            <div className="absolute top-3 left-1/2 -translate-x-1/2 text-[9px] text-zinc-500 italic whitespace-nowrap">"Three Tens" (face down)</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Cheat Layout</div>
           </Container>
         );
 
@@ -259,7 +259,7 @@ const CardCodex = () => {
                 <div className="flex gap-1">
                   <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
                 </div>
-                <span className="text-[8px] text-slate-500">Defender</span>
+                <span className="text-[8px] text-zinc-500">Defender</span>
               </div>
               <div className="flex gap-3 items-start">
                 <div className="flex flex-col items-center">
@@ -274,9 +274,9 @@ const CardCodex = () => {
               <div className="flex items-end gap-5">
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex gap-1">
-                    <Card color="bg-emerald-600/20" /><Card color="bg-emerald-600/20" />
+                    <Card color="bg-cyan-500/20" /><Card color="bg-cyan-500/20" />
                   </div>
-                  <span className="text-[8px] text-slate-500">Attacker</span>
+                  <span className="text-[8px] text-zinc-500">Attacker</span>
                 </div>
                 <div className="flex flex-col items-center gap-0.5">
                   <Card color="bg-blue-900/40" />
@@ -285,7 +285,7 @@ const CardCodex = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Durak Setup</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Durak Setup</div>
           </Container>
         );
 
@@ -307,7 +307,7 @@ const CardCodex = () => {
               </div>
               <div className="flex gap-4 items-end">
                 <div className="flex flex-col items-center gap-1">
-                  <span className="text-[8px] text-slate-500 uppercase">Run</span>
+                  <span className="text-[8px] text-zinc-500 uppercase">Run</span>
                   <div className="flex gap-1">
                     <Card label="7♥" color="bg-white/10" />
                     <Card label="8♥" color="bg-white/10" />
@@ -316,12 +316,12 @@ const CardCodex = () => {
                   </div>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <Card color="bg-slate-700/40" />
-                  <span className="text-[8px] text-slate-500">Kitty</span>
+                  <Card color="bg-zinc-700/40" />
+                  <span className="text-[8px] text-zinc-500">Kitty</span>
                 </div>
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Boodle Layout</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Boodle Layout</div>
           </Container>
         );
 
@@ -331,7 +331,7 @@ const CardCodex = () => {
           <Container>
             <div className="flex items-center gap-4">
               <div className="flex flex-col items-center gap-1">
-                <span className="text-[8px] text-slate-500">Younger</span>
+                <span className="text-[8px] text-zinc-500">Younger</span>
                 <div className="flex gap-0.5">
                   {[1,2,3,4].map(i => <Card key={i} color="bg-blue-900/40" />)}
                 </div>
@@ -343,13 +343,13 @@ const CardCodex = () => {
                 </div>
               </div>
               <div className="flex flex-col items-center gap-1">
-                <span className="text-[8px] text-slate-500">Elder (you)</span>
+                <span className="text-[8px] text-zinc-500">Elder (you)</span>
                 <div className="flex gap-0.5">
-                  {[1,2,3,4].map(i => <Card key={i} color="bg-emerald-600/20" />)}
+                  {[1,2,3,4].map(i => <Card key={i} color="bg-cyan-500/20" />)}
                 </div>
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Piquet Setup</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Piquet Setup</div>
           </Container>
         );
 
@@ -365,15 +365,15 @@ const CardCodex = () => {
                 <span className="text-[8px] text-blue-400/70 mt-1">P1 Pile</span>
               </div>
               <div className="flex flex-col items-center gap-1">
-                <span className="text-[8px] text-slate-500 uppercase tracking-wider">Shared</span>
+                <span className="text-[8px] text-zinc-500 uppercase tracking-wider">Shared</span>
                 <div className="flex gap-1">
                   {[1,2,3].map(i => (
                     <div key={i} className="flex flex-col -space-y-8">
-                      <Card color="bg-white/5" /><Card color="bg-white/5" /><Card label="A" color="bg-emerald-700/30" />
+                      <Card color="bg-white/5" /><Card color="bg-white/5" /><Card label="A" color="bg-cyan-600/30" />
                     </div>
                   ))}
                 </div>
-                <span className="text-[7px] text-emerald-600/70">Build A → K</span>
+                <span className="text-[7px] text-cyan-500/70">Build A → K</span>
               </div>
               <div className="flex flex-col items-center gap-1">
                 <div className="flex flex-col -space-y-9">
@@ -382,7 +382,7 @@ const CardCodex = () => {
                 <span className="text-[8px] text-purple-400/70 mt-1">P2 Pile</span>
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Racing Layout</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Racing Layout</div>
           </Container>
         );
 
@@ -403,25 +403,25 @@ const CardCodex = () => {
               <div className="flex gap-8 items-center">
                 <div className="flex flex-col items-center gap-0.5">
                   <Card label="7" color="bg-white/10" />
-                  <span className="text-[7px] text-slate-500">Spit</span>
+                  <span className="text-[7px] text-zinc-500">Spit</span>
                 </div>
-                <span className="text-slate-600 text-sm">⟵ ⟶</span>
+                <span className="text-zinc-600 text-sm">⟵ ⟶</span>
                 <div className="flex flex-col items-center gap-0.5">
                   <Card label="8" color="bg-white/10" />
-                  <span className="text-[7px] text-slate-500">Spit</span>
+                  <span className="text-[7px] text-zinc-500">Spit</span>
                 </div>
               </div>
               <div className="flex gap-1">
                 {[1,3,2,1,3].map((depth, i) => (
                   <div key={i} className="flex flex-col -space-y-8">
                     {Array.from({length: Math.min(depth, 2)}).map((_, j) => (
-                      <Card key={j} color={j === Math.min(depth,2)-1 ? 'bg-emerald-600/20' : 'bg-blue-900/30'} />
+                      <Card key={j} color={j === Math.min(depth,2)-1 ? 'bg-cyan-500/20' : 'bg-blue-900/30'} />
                     ))}
                   </div>
                 ))}
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Spit Layout</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Spit Layout</div>
           </Container>
         );
 
@@ -439,8 +439,8 @@ const CardCodex = () => {
               ))}
               <div className="flex flex-col gap-2 ml-2">
                 <div className="flex flex-col items-center gap-0.5">
-                  <Card label="A" color="bg-emerald-700/30" />
-                  <span className="text-[7px] text-emerald-600">↑ K</span>
+                  <Card label="A" color="bg-cyan-600/30" />
+                  <span className="text-[7px] text-cyan-500">↑ K</span>
                 </div>
                 <div className="flex flex-col items-center gap-0.5">
                   <Card label="K" color="bg-rose-700/30" />
@@ -448,7 +448,7 @@ const CardCodex = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">St Helena</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">St Helena</div>
           </Container>
         );
 
@@ -459,7 +459,7 @@ const CardCodex = () => {
             <div className="flex items-start gap-4">
               <div className="flex gap-2">
                 <div className="flex flex-col -space-y-8">
-                  <Card color="bg-white/5" /><Card color="bg-white/5" /><Card label="A♠" color="bg-emerald-700/30" />
+                  <Card color="bg-white/5" /><Card color="bg-white/5" /><Card label="A♠" color="bg-cyan-600/30" />
                 </div>
                 <div className="flex flex-col -space-y-8">
                   <Card color="bg-white/5" /><Card label="Q♥" color="bg-rose-700/20" />
@@ -471,11 +471,11 @@ const CardCodex = () => {
               </div>
               <div className="flex flex-col items-center gap-1 mt-auto">
                 <Card color="bg-blue-900/40" />
-                <span className="text-[8px] text-slate-500">Stock</span>
+                <span className="text-[8px] text-zinc-500">Stock</span>
               </div>
             </div>
-            <div className="absolute top-3 left-3 text-[8px] text-slate-500 leading-4">Discard lower<br/>same-suit cards</div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Aces Up</div>
+            <div className="absolute top-3 left-3 text-[8px] text-zinc-500 leading-4">Discard lower<br/>same-suit cards</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Aces Up</div>
           </Container>
         );
 
@@ -489,13 +489,13 @@ const CardCodex = () => {
                   <div className="flex gap-0.5">
                     <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
                   </div>
-                  <span className="text-[8px] text-slate-500">P2</span>
+                  <span className="text-[8px] text-zinc-500">P2</span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex gap-0.5">
                     <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
                   </div>
-                  <span className="text-[8px] text-slate-500">P3</span>
+                  <span className="text-[8px] text-zinc-500">P3</span>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -505,17 +505,17 @@ const CardCodex = () => {
                 </div>
                 <div className="flex flex-col items-center gap-0.5">
                   <Card color="bg-blue-900/40" />
-                  <span className="text-[7px] text-slate-500">Draw</span>
+                  <span className="text-[7px] text-zinc-500">Draw</span>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-1">
                 <div className="flex gap-0.5">
-                  {['A♠','K♠','Q♠','J♠','T♠'].map((c,i) => <Card key={i} label={c} color="bg-emerald-600/20" />)}
+                  {['A♠','K♠','Q♠','J♠','T♠'].map((c,i) => <Card key={i} label={c} color="bg-cyan-500/20" />)}
                 </div>
-                <span className="text-[8px] text-slate-500">Your hand</span>
+                <span className="text-[8px] text-zinc-500">Your hand</span>
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Draw Poker</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Draw Poker</div>
           </Container>
         );
 
@@ -526,10 +526,10 @@ const CardCodex = () => {
             <div className="flex flex-col items-center gap-3">
               <div className="flex flex-col items-center gap-1">
                 <div className="flex gap-1">
-                  <Card label="?" color="bg-slate-700/60" />
+                  <Card label="?" color="bg-zinc-700/60" />
                   <Card label="K♠" color="bg-white/10" />
                 </div>
-                <span className="text-[8px] text-slate-500">Banker</span>
+                <span className="text-[8px] text-zinc-500">Banker</span>
               </div>
               <div className="flex items-center gap-1.5">
                 {[1,2,3].map(i => <div key={i} className="w-4 h-4 rounded-full bg-amber-400/60 border border-amber-500/50" />)}
@@ -537,15 +537,15 @@ const CardCodex = () => {
               </div>
               <div className="flex flex-col items-center gap-1">
                 <div className="flex gap-1">
-                  <Card label="A♥" color="bg-emerald-600/20" />
-                  <Card label="K♣" color="bg-emerald-600/20" />
+                  <Card label="A♥" color="bg-cyan-500/20" />
+                  <Card label="K♣" color="bg-cyan-500/20" />
                 </div>
-                <div className="px-2 py-0.5 rounded-full bg-emerald-900/30 border border-emerald-500/30">
-                  <span className="text-[8px] text-emerald-400 font-bold">Pontoon! (21)</span>
+                <div className="px-2 py-0.5 rounded-full bg-cyan-900/30 border border-cyan-500/30">
+                  <span className="text-[8px] text-cyan-400 font-bold">Pontoon! (21)</span>
                 </div>
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Banking Layout</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Banking Layout</div>
           </Container>
         );
 
@@ -573,7 +573,7 @@ const CardCodex = () => {
                 ))}
               </div>
             </div>
-            <div className="absolute bottom-2 right-2 text-[10px] text-emerald-500/50 uppercase tracking-widest">Klondike Setup</div>
+            <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Klondike Setup</div>
           </Container>
         );
 
@@ -606,8 +606,8 @@ const CardCodex = () => {
       label: 'Shedding',
       icon: Layers,
       desc: 'Race to be the first to empty your hand of all cards.',
-      color: 'from-purple-500 to-violet-600',
-      textColor: 'text-purple-200'
+      color: 'from-cyan-400 to-sky-600',
+      textColor: 'text-cyan-200'
     },
     {
       id: 'Collecting',
@@ -622,24 +622,24 @@ const CardCodex = () => {
       label: 'Ordering / Patience',
       icon: ListOrdered,
       desc: 'Arrange a shuffled pack into a specific sequence or order.',
-      color: 'from-slate-400 to-slate-600',
-      textColor: 'text-slate-200'
+      color: 'from-cyan-500 to-teal-600',
+      textColor: 'text-cyan-200'
     },
     {
       id: 'Vying',
       label: 'Vying',
       icon: Eye,
       desc: 'Bet on your hand strength or bluff opponents into folding.',
-      color: 'from-rose-500 to-red-600',
-      textColor: 'text-rose-200'
+      color: 'from-fuchsia-500 to-purple-600',
+      textColor: 'text-fuchsia-200'
     },
     {
       id: 'Banking',
       label: 'Banking',
       icon: Landmark,
       desc: 'Bet against a central bank or house dealer.',
-      color: 'from-amber-500 to-orange-600',
-      textColor: 'text-amber-200'
+      color: 'from-fuchsia-600 to-indigo-600',
+      textColor: 'text-fuchsia-200'
     },
   ];
 
@@ -1603,7 +1603,7 @@ Scoring:
 
   const getCategoryColor = (catId) => {
     const cat = categories.find(c => c.id === catId);
-    if (!cat) return 'text-slate-400 bg-slate-400/10 border-slate-400/20';
+    if (!cat) return 'text-zinc-400 bg-zinc-400/10 border-zinc-400/20';
     return `${cat.textColor.replace('200', '400')} bg-${cat.textColor.split('-')[1]}-400/10 border-${cat.textColor.split('-')[1]}-400/20`;
   };
 
@@ -1627,8 +1627,8 @@ Scoring:
       }}
       className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
         activeCategory === id
-          ? 'bg-slate-800 text-emerald-400 border border-slate-700 shadow-sm'
-          : 'text-slate-400 hover:bg-slate-900 hover:text-slate-200'
+          ? 'bg-zinc-800 text-fuchsia-400 border border-zinc-700 shadow-sm'
+          : 'text-zinc-400 hover:bg-zinc-900 hover:text-zinc-200'
       }`}
     >
       <Icon size={18} />
@@ -1638,7 +1638,7 @@ Scoring:
   );
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 font-sans selection:bg-emerald-500/30">
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans selection:bg-fuchsia-500/30">
 
       {/* Mobile Sidebar Overlay */}
       {isSidebarOpen && (
@@ -1649,13 +1649,13 @@ Scoring:
       )}
 
       {/* Navigation Sidebar */}
-      <aside className={`fixed top-0 left-0 h-full w-64 bg-slate-950 border-r border-slate-800 z-40 transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <aside className={`fixed top-0 left-0 h-full w-64 bg-zinc-950 border-r border-zinc-800 z-40 transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-6">
           <div className="flex items-center gap-3 mb-8 cursor-pointer" onClick={() => setActiveCategory('Home')}>
-            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-700 rounded-lg flex items-center justify-center shadow-lg shadow-emerald-900/20">
+            <div className="w-10 h-10 bg-gradient-to-br from-fuchsia-600 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-fuchsia-900/30">
               <span className="text-xl font-bold text-white">♠</span>
             </div>
-            <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-200">
+            <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 to-indigo-300">
               Card Codex
             </h1>
           </div>
@@ -1665,7 +1665,7 @@ Scoring:
             <SidebarItem id="All" label="Browse All" Icon={Grid} />
 
             <div className="pt-4 pb-2">
-              <p className="px-4 text-xs font-semibold text-slate-600 uppercase tracking-wider">Mechanisms</p>
+              <p className="px-4 text-xs font-semibold text-zinc-600 uppercase tracking-wider">Mechanisms</p>
             </div>
 
             {categories.map((cat) => (
@@ -1679,12 +1679,12 @@ Scoring:
       <main className="lg:ml-64 min-h-screen relative">
 
         {/* Top Header - Context Aware */}
-        <header className="sticky top-0 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 z-20 px-4 py-4 md:px-8">
+        <header className="sticky top-0 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-20 px-4 py-4 md:px-8">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center gap-4 justify-between">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setIsSidebarOpen(true)}
-                className="lg:hidden p-2 text-slate-400 hover:text-white"
+                className="lg:hidden p-2 text-zinc-400 hover:text-white"
               >
                 <Menu size={24} />
               </button>
@@ -1693,7 +1693,7 @@ Scoring:
                   {activeCategory === 'Home' ? 'Lobby' : (activeCategory === 'All' ? 'All Games' : categories.find(c => c.id === activeCategory)?.label)}
                 </h2>
                 {activeCategory !== 'Home' && (
-                  <p className="text-sm text-slate-400 hidden md:block">
+                  <p className="text-sm text-zinc-400 hidden md:block">
                     {filteredGames.length} {filteredGames.length === 1 ? 'entry' : 'entries'} found
                   </p>
                 )}
@@ -1702,7 +1702,7 @@ Scoring:
 
             <div className="relative w-full md:w-72">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search size={18} className="text-slate-500" />
+                <Search size={18} className="text-zinc-500" />
               </div>
               <input
                 type="text"
@@ -1712,7 +1712,7 @@ Scoring:
                   setSearchQuery(e.target.value);
                   if (activeCategory === 'Home') setActiveCategory('All');
                 }}
-                className="w-full pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
+                className="w-full pl-10 pr-4 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-fuchsia-500/50 transition-all"
               />
             </div>
           </div>
@@ -1728,7 +1728,7 @@ Scoring:
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                   Master the Deck
                 </h1>
-                <p className="text-slate-400 text-lg">
+                <p className="text-zinc-400 text-lg">
                   Games classified by primary mechanism, following David Parlett's <em>Penguin Book of Card Games</em>.
                 </p>
               </div>
@@ -1743,7 +1743,7 @@ Scoring:
                         setActiveCategory(cat.id);
                         window.scrollTo(0,0);
                       }}
-                      className="group relative overflow-hidden rounded-2xl bg-slate-800 border border-slate-700 p-6 text-left hover:border-slate-500 hover:shadow-xl hover:shadow-slate-900/20 transition-all duration-300 active:scale-[0.98]"
+                      className="group relative overflow-hidden rounded-2xl bg-zinc-900 border border-zinc-800 p-6 text-left hover:border-zinc-600 hover:shadow-xl hover:shadow-zinc-900/20 transition-all duration-300 active:scale-[0.98]"
                     >
                       {/* Gradient Background on Hover */}
                       <div className={`absolute inset-0 bg-gradient-to-br ${cat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
@@ -1753,13 +1753,13 @@ Scoring:
                           <Icon className="text-white" size={28} />
                         </div>
 
-                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-emerald-50 transition-colors">
+                        <h3 className="text-2xl font-bold text-white mb-2 transition-colors">
                           {cat.label}
                         </h3>
                         <p className={`text-sm font-medium ${cat.textColor} mb-3 opacity-80 uppercase tracking-wide`}>
                           {gamesData.filter(g => g.category === cat.id).length} Games
                         </p>
-                        <p className="text-slate-400 text-sm leading-relaxed">
+                        <p className="text-zinc-400 text-sm leading-relaxed">
                           {cat.desc}
                         </p>
                       </div>
@@ -1775,15 +1775,15 @@ Scoring:
                 {/* Browse All Card */}
                 <button
                   onClick={() => setActiveCategory('All')}
-                  className="group relative overflow-hidden rounded-2xl bg-slate-800/50 border border-slate-700/50 border-dashed p-6 text-left hover:bg-slate-800 hover:border-slate-600 transition-all duration-300 flex flex-col justify-center items-center"
+                  className="group relative overflow-hidden rounded-2xl bg-zinc-900/50 border border-zinc-800/50 border-dashed p-6 text-left hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 flex flex-col justify-center items-center"
                 >
-                  <div className="w-14 h-14 rounded-full bg-slate-700 flex items-center justify-center mb-4 group-hover:bg-slate-600 transition-colors">
-                    <Grid className="text-slate-300" size={24} />
+                  <div className="w-14 h-14 rounded-full bg-zinc-800 flex items-center justify-center mb-4 group-hover:bg-zinc-700 transition-colors">
+                    <Grid className="text-zinc-300" size={24} />
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-300 group-hover:text-white mb-1">
+                  <h3 className="text-xl font-semibold text-zinc-300 group-hover:text-white mb-1">
                     Browse Full Collection
                   </h3>
-                  <p className="text-slate-500 text-sm">
+                  <p className="text-zinc-500 text-sm">
                     View all {gamesData.length} entries at once
                   </p>
                 </button>
@@ -1794,15 +1794,15 @@ Scoring:
             <>
               {/* Player Count Filter */}
               <div className="flex items-center gap-2 mb-6 flex-wrap">
-                <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider mr-1">Players:</span>
+                <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mr-1">Players:</span>
                 {PLAYER_FILTERS.map(f => (
                   <button
                     key={f}
                     onClick={() => setPlayerFilter(f)}
                     className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
                       playerFilter === f
-                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
-                        : 'bg-slate-800 text-slate-400 border border-slate-700 hover:border-slate-500 hover:text-slate-200'
+                        ? 'bg-fuchsia-500/20 text-fuchsia-300 border border-fuchsia-500/40'
+                        : 'bg-zinc-900 text-zinc-400 border border-zinc-800 hover:border-zinc-600 hover:text-zinc-200'
                     }`}
                   >
                     {f === 'All' ? 'Any' : f === '4+' ? '4+' : `${f}P`}
@@ -1816,8 +1816,10 @@ Scoring:
                     <div
                       key={game.id}
                       onClick={() => setSelectedGame(game)}
-                      className="group bg-slate-800 border border-slate-700 rounded-xl p-5 cursor-pointer hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-900/10 transition-all duration-300 relative overflow-hidden"
+                      className="group bg-zinc-900 border border-zinc-800 rounded-xl p-5 cursor-pointer hover:border-fuchsia-500/40 hover:shadow-lg hover:shadow-fuchsia-900/20 transition-all duration-300 relative overflow-hidden"
                     >
+                      {/* Fuchsia glow on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-600/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none" />
                       <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white/5 to-transparent rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110" />
 
                       <div className="flex flex-wrap gap-2 items-start mb-3 relative z-10">
@@ -1831,15 +1833,15 @@ Scoring:
                         )}
                       </div>
 
-                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors relative z-10">
+                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-fuchsia-300 transition-colors relative z-10">
                         {game.title}
                       </h3>
 
-                      <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-3 relative z-10">
+                      <p className="text-zinc-400 text-sm leading-relaxed mb-4 line-clamp-3 relative z-10">
                         {game.blurb}
                       </p>
 
-                      <div className="flex items-center text-emerald-400 text-sm font-medium relative z-10 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all">
+                      <div className="flex items-center text-fuchsia-400 text-sm font-medium relative z-10 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all">
                         Read Rules <ChevronRight size={16} className="ml-1" />
                       </div>
                     </div>
@@ -1847,11 +1849,11 @@ Scoring:
                 </div>
               ) : (
                 <div className="text-center py-20">
-                  <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Search size={32} className="text-slate-600" />
+                  <div className="w-16 h-16 bg-zinc-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Search size={32} className="text-zinc-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-300">No games found</h3>
-                  <p className="text-slate-500">Try adjusting your search terms.</p>
+                  <h3 className="text-lg font-medium text-zinc-300">No games found</h3>
+                  <p className="text-zinc-500">Try adjusting your search terms.</p>
                 </div>
               )}
             </>
@@ -1863,13 +1865,13 @@ Scoring:
       {selectedGame && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div
-            className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-zinc-950/80 backdrop-blur-sm"
             onClick={() => setSelectedGame(null)}
           />
 
-          <div className="bg-slate-900 border border-slate-700 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative z-50 animate-in fade-in zoom-in-95 duration-200">
+          <div className="bg-zinc-900 border border-zinc-800 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative z-50 animate-in fade-in zoom-in-95 duration-200">
 
-            <div className="sticky top-0 bg-slate-900/95 backdrop-blur border-b border-slate-800 p-6 flex justify-between items-start z-10">
+            <div className="sticky top-0 bg-zinc-900/95 backdrop-blur border-b border-zinc-800 p-6 flex justify-between items-start z-10">
               <div>
                 <span className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded mb-2 inline-block ${getCategoryColor(selectedGame.category)}`}>
                   {selectedGame.category}{selectedGame.subType ? ` · ${selectedGame.subType}` : ''} • {selectedGame.players}
@@ -1880,7 +1882,7 @@ Scoring:
               </div>
               <button
                 onClick={() => setSelectedGame(null)}
-                className="p-2 bg-slate-800 rounded-full text-slate-400 hover:bg-slate-700 hover:text-white transition-colors"
+                className="p-2 bg-zinc-800 rounded-full text-zinc-400 hover:bg-zinc-700 hover:text-white transition-colors"
               >
                 <X size={20} />
               </button>
@@ -1888,8 +1890,8 @@ Scoring:
 
             <div className="p-6 space-y-8">
               {/* Blurb Section */}
-              <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-800">
-                <p className="text-lg text-slate-300 font-light italic leading-relaxed">
+              <div className="bg-zinc-800/50 p-4 rounded-xl border border-zinc-800">
+                <p className="text-lg text-zinc-300 font-light italic leading-relaxed">
                   "{selectedGame.blurb}"
                 </p>
               </div>
@@ -1897,7 +1899,7 @@ Scoring:
               {/* Visualizer Section */}
               {selectedGame.layout && (
                 <div>
-                   <h3 className="text-lg font-semibold text-emerald-400 mb-3 flex items-center gap-2">
+                   <h3 className="text-lg font-semibold text-fuchsia-400 mb-3 flex items-center gap-2">
                     <LayoutTemplate size={20} />
                     Setup Diagram
                   </h3>
@@ -1907,11 +1909,11 @@ Scoring:
 
               {/* Instructions Section */}
               <div>
-                <h3 className="text-lg font-semibold text-emerald-400 mb-3 flex items-center gap-2">
+                <h3 className="text-lg font-semibold text-fuchsia-400 mb-3 flex items-center gap-2">
                   <BookOpen size={20} />
                   How to Play
                 </h3>
-                <div className="text-slate-300 leading-7 space-y-3">
+                <div className="text-zinc-300 leading-7 space-y-3">
                   {selectedGame.instructions.split('\n').map((line, index) => {
                     const trimmed = line.trim();
                     if (!trimmed) return null;
@@ -1929,7 +1931,7 @@ Scoring:
 
                     if (isHeader) {
                       return (
-                        <p key={index} className="font-bold text-white mt-4 mb-1 border-b border-slate-700/50 pb-1">
+                        <p key={index} className="font-bold text-white mt-4 mb-1 border-b border-zinc-700/50 pb-1">
                           {trimmed}
                         </p>
                       );
@@ -1939,9 +1941,9 @@ Scoring:
                     const isBullet = trimmed.startsWith('•') || /^\d+\./.test(trimmed);
 
                     return (
-                      <p key={index} className={`flex gap-3 ${isSubBullet ? 'pl-6 text-slate-400 text-sm' : ''}`}>
-                        {isBullet && !isSubBullet && <span className="text-emerald-500 font-bold select-none min-w-[10px]">•</span>}
-                        {isSubBullet && <span className="text-slate-500 font-bold select-none min-w-[10px]">-</span>}
+                      <p key={index} className={`flex gap-3 ${isSubBullet ? 'pl-6 text-zinc-400 text-sm' : ''}`}>
+                        {isBullet && !isSubBullet && <span className="text-fuchsia-400 font-bold select-none min-w-[10px]">•</span>}
+                        {isSubBullet && <span className="text-zinc-500 font-bold select-none min-w-[10px]">-</span>}
                         <span>{trimmed.replace(/^[•◦▪]\s*/, '')}</span>
                       </p>
                     );
@@ -1950,20 +1952,20 @@ Scoring:
               </div>
 
               {/* Video Action */}
-              <div className="pt-4 border-t border-slate-800">
+              <div className="pt-4 border-t border-zinc-800">
                 <button
                   onClick={() => handleVideoClick(selectedGame)}
                   className={`w-full flex items-center justify-center gap-2 font-semibold py-3 px-6 rounded-xl transition-all shadow-lg active:scale-95 ${
                     selectedGame.videoUrl
                       ? 'bg-red-600 hover:bg-red-700 text-white shadow-red-900/20'
-                      : 'bg-slate-700 hover:bg-slate-600 text-slate-200 shadow-slate-900/20'
+                      : 'bg-zinc-700 hover:bg-zinc-600 text-zinc-200 shadow-zinc-900/20'
                   }`}
                 >
                   <Play size={20} fill={selectedGame.videoUrl ? "currentColor" : "none"} />
                   {selectedGame.videoUrl ? "Watch Tutorial" : "Find Tutorial on YouTube"}
                   {selectedGame.videoUrl && <ExternalLink size={16} className="ml-1 opacity-70"/>}
                 </button>
-                <p className="text-center text-slate-500 text-xs mt-3">
+                <p className="text-center text-zinc-500 text-xs mt-3">
                   {selectedGame.videoUrl ? "Opens direct video link" : "Opens a YouTube search"}
                 </p>
               </div>
