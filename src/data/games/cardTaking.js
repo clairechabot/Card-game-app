@@ -17,7 +17,7 @@ Scoring:
 • Little Cassino (2♠): 1 point.
 • Each Ace: 1 point.
 • Total available: 11 points per deal.`,
-    videoQuery: "Cassino card game how to play rules",
+    videoUrl: "https://youtu.be/6rftQLsv6Uk",
     layout: "cassino"
   },
   {
@@ -32,7 +32,7 @@ The Play:
 • Highest card wins both cards regardless of suit.
 • War (tie): each player places three cards face down, then flips one face up. The highest face-up card wins all cards in play. Ties during a War repeat the process.
 Scoring: The player who captures all 52 cards wins.`,
-    videoUrl: "https://youtu.be/XO-wxomkv0c",
+    videoUrl: "https://youtu.be/yX-jOVer758",
     layout: "war"
   },
 ];

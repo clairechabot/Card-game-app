@@ -16,7 +16,7 @@ Scoring:
 • 1 point for each trick above six taken by a partnership.
 • Honours — the Ace, King, Queen and Jack of trumps — score 4 points to a side holding all four, or 2 for holding three.
 • Game: 5 points. A rubber is the best of three games.`,
-    videoQuery: "Whist card game rules how to play partnership",
+    videoUrl: "https://youtu.be/9v5UxlUg55Y",
     layout: "tricktable",
     tableSpec: { seats: 4, partnership: true, hand: 13, trump: 'turned', note: "Dealer's last card fixes trumps", caption: 'Whist' }
   },
@@ -37,7 +37,7 @@ Scoring:
 • Odd tricks — those above six — score 20 each in clubs or diamonds, 30 each in hearts or spades, and 40 for the first plus 30 for each further trick in no-trump.
 • 100 or more trick points makes a game; two games win the rubber.
 • Bonuses for a small slam (twelve tricks) and grand slam (all thirteen). Undertricks are penalised, and more heavily when doubled or vulnerable.`,
-    videoQuery: "Contract Bridge rules how to play bidding declarer dummy",
+    videoUrl: "https://youtu.be/2IomnCvxWzM",
     layout: "bridge"
   },
   {
@@ -57,7 +57,7 @@ Scoring:
 • Miss bid: −10 per trick bid.
 • Nil: +50 if successful, −50 if failed.
 • Game: 500 points.`,
-    videoUrl: "https://youtu.be/0aX1JfkAuQA",
+    videoUrl: "https://youtu.be/tZkOB2kABZU",
     layout: "tricktable",
     tableSpec: { seats: 4, partnership: true, hand: 13, trump: 'fixed', trumpSuit: '♠', note: 'Spades are always trump', caption: 'Spades' }
   },
@@ -98,7 +98,7 @@ Scoring:
 • 1 penalty point per Heart won; 13 points for the Queen of Spades.
 • Shooting the Moon: taking all 14 penalty cards deducts 26 from your score (or adds 26 to all others).
 • Game ends when any player reaches 100; lowest score wins.`,
-    videoQuery: "Hearts card game how to play rules",
+    videoUrl: "https://youtu.be/u1Pxo_OqTUc",
     layout: "tricktable",
     tableSpec: { seats: [3, 6], hand: 13, trump: 'none', note: 'Avoidance — hearts and ♠Q are penalties', caption: 'Hearts' }
   },
@@ -139,7 +139,7 @@ Scoring:
 • Lone hand march: 4 points.
 • Euchre (Makers fail to reach 3 tricks): opponents score 2 points.
 • Game: first to 10 points.`,
-    videoQuery: "Euchre card game how to play rules",
+    videoUrl: "https://youtu.be/XBC_lNo-CsE",
     layout: "tricktable",
     tableSpec: { seats: 4, partnership: true, hand: 5, trump: 'turned', note: '25-card pack; turn-up proposes trump', caption: 'Euchre' }
   },
@@ -178,7 +178,7 @@ The Play:
 Scoring:
 • Base value of the contract multiplied by matador multipliers (tops held or missing in sequence).
 • Soloist wins or loses the calculated value; Null contracts have fixed values (23, 35, 46, or 59).`,
-    videoQuery: "Skat card game how to play rules Germany",
+    videoUrl: "https://youtu.be/RyiDypsr_cI",
     layout: "tricktable",
     tableSpec: { seats: 3, hand: 10, widow: 2, trump: 'bid', note: 'Two cards go face down to the skat', caption: 'Skat' }
   },

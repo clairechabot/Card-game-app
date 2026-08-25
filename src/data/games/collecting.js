@@ -16,7 +16,7 @@ Scoring:
 • Courts count 10, Aces 1, all others face value.
 • Going rummy doubles the amount collected.
 • Game: 100 points, or a fixed number of deals.`,
-    videoQuery: "Rummy card game rules how to play melds",
+    videoUrl: "https://youtu.be/M_9aW1ZGgS4",
     layout: "rummy"
   },
   {
@@ -36,7 +36,7 @@ Scoring:
 • Gin scores a 20-point bonus plus the opponent's entire deadwood.
 • Undercut — the opponent's deadwood equal to or lower than the knocker's — scores them the difference plus 10.
 • Game: 100 points.`,
-    videoQuery: "Gin Rummy rules how to play knocking gin",
+    videoUrl: "https://youtu.be/Uy063oI9Gkk",
     layout: "rummy",
     handSpec: { concealed: true }
   },
@@ -57,7 +57,7 @@ Scoring:
 • Red 3s: 100 each, or 800 for all four.
 • Card values: Jokers 50, Aces and 2s 20, Kings down to 8s 10, 7s down to 4s and black 3s 5.
 • Game: 5,000 points.`,
-    videoQuery: "Canasta card game rules how to play partnership",
+    videoUrl: "https://youtu.be/gJuu_QAIgiQ",
     layout: "rummy",
     handSpec: { noRuns: true }
   },
@@ -77,7 +77,7 @@ Scoring:
 • Each trick led scores 1; winning more than six tricks scores 10 (the cards).
 • Pique (reaching 30 before opponent scores): bonus 30. Repique (in declarations alone): bonus 60.
 • Game: first to 100 points over a partie of six deals.`,
-    videoQuery: "Piquet card game how to play rules Parlett",
+    videoUrl: "https://youtu.be/Z1bShGQOwrM",
     layout: "piquet"
   },
 ];

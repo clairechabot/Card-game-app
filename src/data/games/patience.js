@@ -12,7 +12,7 @@ The Play:
 • Stockpile: draw one or three cards at a time; only the top card is playable.
 • Empty columns: only a King (or a sequence headed by a King) may fill them.
 Scoring: Won when all four foundations are complete.`,
-    videoUrl: "https://youtu.be/9cFOr2T2eb8",
+    videoUrl: "https://youtu.be/6dMzrcqCwaQ",
     layout: "patience",
     layoutSpec: {
       tableau: [1, 2, 3, 4, 5, 6, 7],
@@ -372,7 +372,7 @@ The Play:
 • Only the topmost card of a column or a free cell card may be moved to a foundation or column.
 • Empty columns may be filled with any card.
 Scoring: Traditional scoring — won when all four foundations are complete.`,
-    videoUrl: "https://youtu.be/R_8v8jTVG-M",
+    videoUrl: "https://youtu.be/LNpX8B3cKC0",
     layout: "patience",
     layoutSpec: {
       tableau: [7, 7, 7, 7, 6, 6, 6, 6],
@@ -417,7 +417,7 @@ The Play:
 • Cards cannot be moved between columns.
 • No redeal.
 Scoring: Count cards remaining in columns — the lower the better (par is typically 0).`,
-    videoQuery: "Golf solitaire patience how to play",
+    videoUrl: "https://youtu.be/fWtegs8y5cw",
     layout: "patience",
     layoutSpec: {
       tableau: 7,
@@ -531,7 +531,7 @@ The Play:
 • Flip stock one card at a time to a waste pile when no pair is available.
 • No redeal.
 Scoring: Traditional scoring — won when the entire pyramid is cleared.`,
-    videoQuery: "Pyramid solitaire patience how to play",
+    videoUrl: "https://youtu.be/dnRlETGqHec",
     layout: "patience",
     layoutSpec: {
       pyramid: 7,
@@ -719,7 +719,7 @@ The Play:
 • Empty columns may only be filled with Kings.
 • No redeal.
 Scoring: Traditional scoring.`,
-    videoQuery: "Yukon solitaire patience how to play",
+    videoUrl: "https://youtu.be/3zvmx6ONoqw",
     layout: "patience",
     layoutSpec: {
       tableau: [1, 6, 7, 8, 9, 10, 11],
