@@ -94,7 +94,8 @@ The Play:
 • End your turn by discarding one card face up to one of your four personal discard piles.
 Scoring: Winner scores 5 points plus 1 per card remaining in the loser's riddance pile.`,
     videoQuery: "Spite and Malice card game how to play rules",
-    layout: "comppatience"
+    layout: "comppatience",
+    handSpec: { caption: 'Spite & Malice' }
   },
   {
     title: "Spit",
@@ -128,6 +129,7 @@ Scoring:
 • +1 point per card on shared central foundations.
 • −2 points per card remaining in your off-pile at the end.`,
     videoQuery: "Racing Demon Nerts card game how to play rules",
-    layout: "comppatience"
+    layout: "comppatience",
+    handSpec: { leftLabel: 'Your pile', rightLabel: 'Others', caption: 'Racing Demon' }
   },
 ];

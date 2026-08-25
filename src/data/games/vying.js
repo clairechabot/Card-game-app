@@ -15,7 +15,8 @@ Scoring:
 • The last player left in, or the winner of a showdown, takes the whole pot.
 • Three 3s is the highest prial of all, outranking three Aces.`,
     videoQuery: "Brag card game rules how to play three card brag",
-    layout: "poker"
+    layout: "poker",
+    handSpec: { cards: ['A♠', 'A♥', 'A♦'], draw: false, caption: 'Three-Card Brag' }
   },
   {
     title: "Poker",

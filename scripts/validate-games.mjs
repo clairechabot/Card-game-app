@@ -14,6 +14,7 @@ import { dirname, resolve } from 'node:path';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 const { games } = await import(resolve(root, 'src/data/games/index.js'));
+const { parsePlayerRange } = await import(resolve(root, 'src/lib/players.js'));
 
 // categories.js imports lucide-react icons, which need a bundler. Read the
 // category ids straight out of the source instead.
@@ -63,6 +64,8 @@ for (const game of games) {
         fail(game, 'layoutSpec.faceDown length does not match layoutSpec.tableau');
       }
     }
+  } else if (game.tableSpec) {
+    // Drawn by TrickTable rather than by a switch case.
   } else if (!game.layout) {
     fail(game, 'has neither a layout nor a layoutSpec — it would render no diagram');
   } else if (!LAYOUT_CASES.includes(game.layout)) {
@@ -74,6 +77,25 @@ for (const game of games) {
     fail(game, 'is a patience game but has no layoutSpec, so it would reuse another game’s diagram');
   }
 
+  if (game.tableSpec) {
+    const { trump, trumpSuit, hand, seats } = game.tableSpec;
+    const TRUMPS = ['none', 'fixed', 'turned', 'bid', 'varies'];
+    if (!TRUMPS.includes(trump)) fail(game, `tableSpec.trump "${trump}" is not one of ${TRUMPS.join(', ')}`);
+    if (trump === 'fixed' && !trumpSuit) fail(game, 'tableSpec has a fixed trump but names no suit');
+    if (!hand) fail(game, 'tableSpec names no hand size');
+    if (!seats) fail(game, 'tableSpec names no seat count');
+
+    // The diagram must not contradict the players string beside it.
+    const [min, max] = parsePlayerRange(game.players);
+    const [specMin, specMax] = Array.isArray(seats) ? seats : [seats, seats];
+    if (specMin !== min || specMax !== max) {
+      fail(
+        game,
+        `tableSpec.seats (${specMin}–${specMax}) contradicts players "${game.players}" (${min}–${max})`
+      );
+    }
+  }
+
   if (game.instructions && !HEADINGS.some((h) => game.instructions.includes(h))) {
     fail(game, 'instructions contain none of the recognised section headings');
   }
@@ -82,6 +104,34 @@ for (const game of games) {
   // silently falls back to "any number of players" in the filter.
   if (game.players && !/^\d+[+–-]?\d*\s*(Player|Players)/.test(game.players)) {
     fail(game, `players string "${game.players}" will not parse`);
+  }
+}
+
+/**
+ * The drift this file exists to catch, stated generally.
+ *
+ * A bespoke diagram may be shared by several games only if all but one of them
+ * carry a `handSpec` telling the diagram how they differ. The exception is the
+ * canonical game the diagram was drawn for. Without this, Brag borrowed the
+ * Draw Poker diagram whole — a five-card hand and a draw pile, on a page whose
+ * rules say three cards and no draw.
+ */
+const sharing = new Map();
+for (const game of games) {
+  if (game.layoutSpec || game.tableSpec || !game.layout) continue;
+  if (!sharing.has(game.layout)) sharing.set(game.layout, []);
+  sharing.get(game.layout).push(game);
+}
+
+for (const [layout, sharers] of sharing) {
+  if (sharers.length < 2) continue;
+  const undifferentiated = sharers.filter((g) => !g.handSpec);
+  if (undifferentiated.length > 1) {
+    errors.push(
+      `layout "${layout}" is shared by ${sharers.length} games but ` +
+        `${undifferentiated.map((g) => g.title).join(', ')} carry no handSpec — ` +
+        `all but the canonical game must say how they differ`
+    );
   }
 }
 

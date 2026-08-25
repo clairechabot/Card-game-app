@@ -1,5 +1,6 @@
 import { Card, Container, Caption } from './Card';
 import { PatienceLayout } from './PatienceLayout';
+import { TrickTable } from './TrickTable';
 
 /**
  * Setup diagram for a game.
@@ -8,63 +9,12 @@ import { PatienceLayout } from './PatienceLayout';
  * Everything else has a bespoke case below, keyed off `game.layout`.
  */
 export function GameVisualizer({ game }) {
+  const hand = game.handSpec ?? {};
   if (game.layoutSpec) return <PatienceLayout spec={game.layoutSpec} title={game.title} />;
+  if (game.tableSpec) return <TrickTable spec={game.tableSpec} title={game.title} />;
 
   switch (game.layout) {
-    // ── 4-player trick table (Spades, Hearts, Euchre, Barbu) ─────────────
-    case 'tricktaking':
-      return (
-        <Container>
-          <div className="relative w-48 h-48">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 flex gap-1">
-              <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
-            </div>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-1">
-              <Card color="bg-cyan-500/20" /><Card color="bg-cyan-500/20" /><Card color="bg-cyan-500/20" />
-            </div>
-            <div className="absolute left-0 top-1/2 -translate-y-1/2"><Card color="bg-zinc-700/50" /></div>
-            <div className="absolute right-0 top-1/2 -translate-y-1/2"><Card color="bg-zinc-700/50" /></div>
-            {/* Current trick */}
-            <div className="absolute inset-0 m-auto w-20 h-20 border border-zinc-700 rounded-lg bg-zinc-800/60">
-              <div className="relative w-full h-full">
-                <div className="absolute top-1 left-1/2 -translate-x-1/2 w-5 h-7 rounded-sm border border-zinc-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-zinc-300">N</div>
-                <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-5 h-7 rounded-sm border border-cyan-500/40 bg-cyan-500/10 flex items-center justify-center text-[7px] font-bold text-cyan-300">S</div>
-                <div className="absolute top-1/2 left-1 -translate-y-1/2 w-5 h-7 rounded-sm border border-zinc-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-zinc-300">W</div>
-                <div className="absolute top-1/2 right-1 -translate-y-1/2 w-5 h-7 rounded-sm border border-zinc-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-zinc-300">E</div>
-              </div>
-            </div>
-          </div>
-          <div className="absolute top-3 right-3 flex flex-col items-center gap-0.5">
-            <Card label="♠" color="bg-indigo-500/30" />
-            <span className="text-[8px] text-indigo-400 uppercase">Trump</span>
-          </div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Trick Table</div>
-        </Container>
-      );
 
-    // ── 3-player trick table (Ninety-Nine, Nap, Skat) ────────────────────
-    case 'tricktaking3':
-      return (
-        <Container>
-          <div className="relative w-48 h-48">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 flex gap-1">
-              <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
-            </div>
-            <div className="absolute bottom-0 right-4 flex gap-1">
-              <Card color="bg-cyan-500/20" /><Card color="bg-cyan-500/20" />
-            </div>
-            <div className="absolute bottom-0 left-4 flex gap-1">
-              <Card color="bg-zinc-700/50" /><Card color="bg-zinc-700/50" />
-            </div>
-            <div className="absolute inset-0 m-auto w-20 h-16 border border-zinc-700 rounded-lg bg-zinc-800/60 flex items-center justify-center gap-2">
-              <div className="w-5 h-7 rounded-sm border border-zinc-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-zinc-300">N</div>
-              <div className="w-5 h-7 rounded-sm border border-zinc-500 bg-white/10 flex items-center justify-center text-[7px] font-bold text-zinc-300">W</div>
-              <div className="w-5 h-7 rounded-sm border border-cyan-500/40 bg-cyan-500/10 flex items-center justify-center text-[7px] font-bold text-cyan-300">E</div>
-            </div>
-          </div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">3-Player Table</div>
-        </Container>
-      );
 
     // ── Cassino ───────────────────────────────────────────────────────────
     case 'cassino':
@@ -96,7 +46,7 @@ export function GameVisualizer({ game }) {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Cassino Layout</div>
+          <Caption>{hand.caption ?? 'Cassino Layout'}</Caption>
         </Container>
       );
 
@@ -129,7 +79,7 @@ export function GameVisualizer({ game }) {
               <span className="text-[8px] text-zinc-500 mt-2">P2 Deck</span>
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Battle Setup</div>
+          <Caption>{hand.caption ?? 'Battle Setup'}</Caption>
         </Container>
       );
 
@@ -163,7 +113,7 @@ export function GameVisualizer({ game }) {
               <span className="text-[8px] text-zinc-500">Hand <span className="text-amber-400">(8=Wild)</span></span>
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Crazy Eights</div>
+          <Caption>{hand.caption ?? 'Crazy Eights'}</Caption>
         </Container>
       );
 
@@ -201,7 +151,7 @@ export function GameVisualizer({ game }) {
             </div>
           </div>
           <div className="absolute top-2 left-2 text-[8px] text-amber-400/70">★ President  ✕ Scum</div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Climbing Game</div>
+          <Caption>{hand.caption ?? 'Climbing Game'}</Caption>
         </Container>
       );
 
@@ -232,7 +182,7 @@ export function GameVisualizer({ game }) {
             </div>
           </div>
           <div className="absolute top-3 left-1/2 -translate-x-1/2 text-[9px] text-zinc-500 italic whitespace-nowrap">"Three Tens" (face down)</div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Cheat Layout</div>
+          <Caption>{hand.caption ?? 'Cheat Layout'}</Caption>
         </Container>
       );
 
@@ -271,7 +221,7 @@ export function GameVisualizer({ game }) {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Durak Setup</div>
+          <Caption>{hand.caption ?? 'Durak Setup'}</Caption>
         </Container>
       );
 
@@ -307,7 +257,7 @@ export function GameVisualizer({ game }) {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Boodle Layout</div>
+          <Caption>{hand.caption ?? 'Boodle Layout'}</Caption>
         </Container>
       );
 
@@ -335,7 +285,7 @@ export function GameVisualizer({ game }) {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Piquet Setup</div>
+          <Caption>{hand.caption ?? 'Piquet Setup'}</Caption>
         </Container>
       );
 
@@ -348,7 +298,7 @@ export function GameVisualizer({ game }) {
               <div className="flex flex-col -space-y-9">
                 <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-white/15" />
               </div>
-              <span className="text-[8px] text-blue-400/70 mt-1">P1 Pile</span>
+              <span className="text-[8px] text-blue-400/70 mt-1">{hand.leftLabel ?? 'P1 Pile'}</span>
             </div>
             <div className="flex flex-col items-center gap-1">
               <span className="text-[8px] text-zinc-500 uppercase tracking-wider">Shared</span>
@@ -365,10 +315,10 @@ export function GameVisualizer({ game }) {
               <div className="flex flex-col -space-y-9">
                 <Card color="bg-purple-900/40" /><Card color="bg-purple-900/40" /><Card color="bg-white/15" />
               </div>
-              <span className="text-[8px] text-purple-400/70 mt-1">P2 Pile</span>
+              <span className="text-[8px] text-purple-400/70 mt-1">{hand.rightLabel ?? 'P2 Pile'}</span>
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Racing Layout</div>
+          <Caption>{hand.caption ?? 'Racing Layout'}</Caption>
         </Container>
       );
 
@@ -407,7 +357,7 @@ export function GameVisualizer({ game }) {
               ))}
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Spit Layout</div>
+          <Caption>{hand.caption ?? 'Spit Layout'}</Caption>
         </Container>
       );
 
@@ -417,37 +367,37 @@ export function GameVisualizer({ game }) {
         <Container>
           <div className="flex flex-col items-center gap-3">
             <div className="flex gap-8">
-              <div className="flex flex-col items-center gap-1">
-                <div className="flex gap-0.5">
-                  <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
+              {['P2', 'P3'].map((seat) => (
+                <div key={seat} className="flex flex-col items-center gap-1">
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: Math.min((hand.cards ?? [1,2,3,4,5]).length, 3) }).map((_, i) => (
+                      <Card key={i} size="sm" color="bg-blue-900/40" />
+                    ))}
+                  </div>
+                  <span className="text-[8px] text-zinc-500">{seat}</span>
                 </div>
-                <span className="text-[8px] text-zinc-500">P2</span>
-              </div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="flex gap-0.5">
-                  <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
-                </div>
-                <span className="text-[8px] text-zinc-500">P3</span>
-              </div>
+              ))}
             </div>
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-amber-500/30 bg-amber-900/20">
                 {[1,2,3].map(i => <div key={i} className="w-3 h-3 rounded-full bg-amber-400/60" />)}
                 <span className="text-[8px] text-amber-400 ml-1">Pot</span>
               </div>
-              <div className="flex flex-col items-center gap-0.5">
-                <Card color="bg-blue-900/40" />
-                <span className="text-[7px] text-zinc-500">Draw</span>
-              </div>
+              {hand.draw === false ? null : (
+                <div className="flex flex-col items-center gap-0.5">
+                  <Card color="bg-blue-900/40" />
+                  <span className="text-[7px] text-zinc-500">Draw</span>
+                </div>
+              )}
             </div>
             <div className="flex flex-col items-center gap-1">
               <div className="flex gap-0.5">
-                {['A♠','K♠','Q♠','J♠','T♠'].map((c,i) => <Card key={i} label={c} color="bg-cyan-500/20" />)}
+                {(hand.cards ?? ['A♠','K♠','Q♠','J♠','T♠']).map((c,i) => <Card key={i} label={c} color="bg-cyan-500/20" />)}
               </div>
               <span className="text-[8px] text-zinc-500">Your hand</span>
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Draw Poker</div>
+          <Caption>{hand.caption ?? 'Draw Poker'}</Caption>
         </Container>
       );
 
@@ -473,11 +423,11 @@ export function GameVisualizer({ game }) {
                 <Card label="K♣" color="bg-cyan-500/20" />
               </div>
               <div className="px-2 py-0.5 rounded-full bg-cyan-900/30 border border-cyan-500/30">
-                <span className="text-[8px] text-cyan-400 font-bold">Pontoon! (21)</span>
+                <span className="text-[8px] text-cyan-400 font-bold">{hand.badge ?? 'Pontoon! (21)'}</span>
               </div>
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Banking Layout</div>
+          <Caption>{hand.caption ?? 'Banking Layout'}</Caption>
         </Container>
       );
     // ── Contract Bridge (dummy exposed) ───────────────────────────────────
@@ -509,7 +459,7 @@ export function GameVisualizer({ game }) {
               <span className="text-[7px] text-zinc-500">contract · 10 tricks</span>
             </div>
           </div>
-          <Caption>Bridge Table</Caption>
+          <Caption>{hand.caption ?? 'Bridge Table'}</Caption>
         </Container>
       );
 
@@ -528,14 +478,19 @@ export function GameVisualizer({ game }) {
                 <span className="text-[8px] text-zinc-500">Discard</span>
               </div>
             </div>
-            <div className="flex gap-4">
+            <div className={`flex gap-4 ${hand.concealed ? 'opacity-40' : ''}`}>
               <div className="flex flex-col items-center gap-1">
                 <div className="flex -space-x-4">
-                  <Card label="7♥" size="sm" color="bg-emerald-700/30" />
-                  <Card label="8♥" size="sm" color="bg-emerald-700/30" />
-                  <Card label="9♥" size="sm" color="bg-emerald-700/30" />
+                  {(hand.noRuns
+                    ? ['7♦', '7♣', '2★']
+                    : ['7♥', '8♥', '9♥']
+                  ).map((c) => (
+                    <Card key={c} size="sm" color="bg-emerald-700/30" label={c} />
+                  ))}
                 </div>
-                <span className="text-[7px] text-emerald-400">Run</span>
+                <span className="text-[7px] text-emerald-400">
+                  {hand.noRuns ? 'Set + wild' : 'Run'}
+                </span>
               </div>
               <div className="flex flex-col items-center gap-1">
                 <div className="flex -space-x-4">
@@ -548,15 +503,17 @@ export function GameVisualizer({ game }) {
             </div>
             <div className="flex flex-col items-center gap-1">
               <div className="flex gap-1">
-                <Card size="sm" color="bg-cyan-500/20" />
-                <Card size="sm" color="bg-cyan-500/20" />
-                <Card size="sm" color="bg-cyan-500/20" />
-                <Card size="sm" color="bg-cyan-500/20" />
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <Card key={i} size="sm" color="bg-cyan-500/20" />
+                ))}
               </div>
               <span className="text-[8px] text-zinc-500">Your hand</span>
             </div>
+            {hand.concealed && (
+              <span className="text-[8px] text-amber-400/80">Melds stay concealed until you knock</span>
+            )}
           </div>
-          <Caption>Melds & Stock</Caption>
+          <Caption>{hand.caption ?? 'Melds & Stock'}</Caption>
         </Container>
       );
 
@@ -604,7 +561,7 @@ export function GameVisualizer({ game }) {
               <span className="text-[8px] text-zinc-500">Crib (dealer&apos;s)</span>
             </div>
           </div>
-          <Caption>Cribbage</Caption>
+          <Caption>{hand.caption ?? 'Cribbage'}</Caption>
         </Container>
       );
 
@@ -641,7 +598,7 @@ export function GameVisualizer({ game }) {
             </div>
           </div>
           <div className="absolute top-3 left-3 text-[8px] text-zinc-500 leading-4">Only the last digit<br />of a total counts</div>
-          <Caption>Punto Banco</Caption>
+          <Caption>{hand.caption ?? 'Punto Banco'}</Caption>
         </Container>
       );
 
@@ -677,7 +634,7 @@ export function GameVisualizer({ game }) {
               </div>
             </div>
           </div>
-          <Caption>Faro Layout</Caption>
+          <Caption>{hand.caption ?? 'Faro Layout'}</Caption>
         </Container>
       );
 
