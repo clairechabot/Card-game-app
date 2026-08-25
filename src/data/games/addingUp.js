@@ -35,7 +35,8 @@ Scoring:
 • A tie is a push — the stake is returned.
 • Insurance, offered when the dealer shows an Ace, pays 2-to-1 if the dealer has blackjack.`,
     videoQuery: "Blackjack card game rules how to play basic strategy",
-    layout: "pontoon"
+    layout: "pontoon",
+    handSpec: { badge: 'Blackjack! (21)', caption: 'Blackjack' }
   },
   {
     title: "Pontoon",
@@ -53,6 +54,7 @@ Scoring:
 • Five-card trick (five cards totalling 21 or under): pays 2-to-1.
 • Banker wins all ties.`,
     videoQuery: "Pontoon Blackjack British card game how to play rules",
-    layout: "pontoon"
+    layout: "pontoon",
+    handSpec: { caption: 'Pontoon' }
   },
 ];

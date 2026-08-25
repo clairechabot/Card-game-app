@@ -37,7 +37,8 @@ Scoring:
 • Undercut — the opponent's deadwood equal to or lower than the knocker's — scores them the difference plus 10.
 • Game: 100 points.`,
     videoQuery: "Gin Rummy rules how to play knocking gin",
-    layout: "rummy"
+    layout: "rummy",
+    handSpec: { concealed: true }
   },
   {
     title: "Canasta",
@@ -57,7 +58,8 @@ Scoring:
 • Card values: Jokers 50, Aces and 2s 20, Kings down to 8s 10, 7s down to 4s and black 3s 5.
 • Game: 5,000 points.`,
     videoQuery: "Canasta card game rules how to play partnership",
-    layout: "rummy"
+    layout: "rummy",
+    handSpec: { noRuns: true }
   },
   {
     title: "Piquet",

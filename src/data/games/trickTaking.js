@@ -17,7 +17,8 @@ Scoring:
 • Honours — the Ace, King, Queen and Jack of trumps — score 4 points to a side holding all four, or 2 for holding three.
 • Game: 5 points. A rubber is the best of three games.`,
     videoQuery: "Whist card game rules how to play partnership",
-    layout: "tricktaking"
+    layout: "tricktable",
+    tableSpec: { seats: 4, partnership: true, hand: 13, trump: 'turned', note: "Dealer's last card fixes trumps", caption: 'Whist' }
   },
   {
     title: "Contract Bridge",
@@ -57,7 +58,8 @@ Scoring:
 • Nil: +50 if successful, −50 if failed.
 • Game: 500 points.`,
     videoUrl: "https://youtu.be/0aX1JfkAuQA",
-    layout: "tricktaking"
+    layout: "tricktable",
+    tableSpec: { seats: 4, partnership: true, hand: 13, trump: 'fixed', trumpSuit: '♠', note: 'Spades are always trump', caption: 'Spades' }
   },
   {
     title: "Ninety-Nine",
@@ -77,7 +79,8 @@ Scoring:
 • Premium bonuses for declaring or revealing bids face up before play.
 • Game: 100 points.`,
     videoQuery: "Ninety-Nine card game David Parlett rules how to play",
-    layout: "tricktaking3"
+    layout: "tricktable",
+    tableSpec: { seats: 3, hand: 12, trump: 'varies', note: 'Trump set by the previous deal', caption: 'Ninety-Nine' }
   },
   {
     title: "Hearts",
@@ -96,7 +99,8 @@ Scoring:
 • Shooting the Moon: taking all 14 penalty cards deducts 26 from your score (or adds 26 to all others).
 • Game ends when any player reaches 100; lowest score wins.`,
     videoQuery: "Hearts card game how to play rules",
-    layout: "tricktaking"
+    layout: "tricktable",
+    tableSpec: { seats: [3, 6], hand: 13, trump: 'none', note: 'Avoidance — hearts and ♠Q are penalties', caption: 'Hearts' }
   },
   {
     title: "Nap",
@@ -115,7 +119,8 @@ Scoring:
 • Failed bidder pays the same to each opponent.
 • Nap: wins 10 if successful, loses 5 if not. Wellington and Blucher carry higher stakes.`,
     videoQuery: "Nap Napoleon card game how to play",
-    layout: "tricktaking3"
+    layout: "tricktable",
+    tableSpec: { seats: [3, 7], hand: 5, trump: 'bid', note: "Declarer's bid suit becomes trump", caption: 'Napoleon' }
   },
   {
     title: "Euchre",
@@ -135,7 +140,8 @@ Scoring:
 • Euchre (Makers fail to reach 3 tricks): opponents score 2 points.
 • Game: first to 10 points.`,
     videoQuery: "Euchre card game how to play rules",
-    layout: "tricktaking"
+    layout: "tricktable",
+    tableSpec: { seats: 4, partnership: true, hand: 5, trump: 'turned', note: '25-card pack; turn-up proposes trump', caption: 'Euchre' }
   },
   {
     title: "Barbu",
@@ -154,7 +160,8 @@ Scoring:
 • Positive points for finish order in Domino or tricks won in Trump.
 • Highest cumulative score after 28 deals wins.`,
     videoQuery: "Barbu card game how to play rules",
-    layout: "tricktaking"
+    layout: "tricktable",
+    tableSpec: { seats: 4, hand: 13, trump: 'none', note: 'Declarer picks a contract each deal', caption: 'Barbu' }
   },
   {
     title: "Skat",
@@ -172,6 +179,7 @@ Scoring:
 • Base value of the contract multiplied by matador multipliers (tops held or missing in sequence).
 • Soloist wins or loses the calculated value; Null contracts have fixed values (23, 35, 46, or 59).`,
     videoQuery: "Skat card game how to play rules Germany",
-    layout: "tricktaking3"
+    layout: "tricktable",
+    tableSpec: { seats: 3, hand: 10, widow: 2, trump: 'bid', note: 'Two cards go face down to the skat', caption: 'Skat' }
   },
 ];
