@@ -16,7 +16,7 @@ Scoring:
 • Player bet: pays even money.
 • Banker bet: pays even money less 5% commission, reflecting its small edge.
 • Tie: pays 8-to-1, and Player and Banker stakes are returned.`,
-    videoQuery: "Baccarat punto banco rules how to play third card rule",
+    videoUrl: "https://youtu.be/1NTuW1NrXFM",
     layout: "baccarat"
   },
   {

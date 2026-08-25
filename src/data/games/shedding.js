@@ -11,7 +11,7 @@ The Play:
 • Eights are wild: play one at any time and nominate a new suit to follow.
 • If unable to play, draw from stock until able.
 Scoring: Winner collects card values from all opponents' hands: Eights = 50, court cards = 10, number cards at face value.`,
-    videoUrl: "https://youtu.be/pkKzzaR4Yb4",
+    videoUrl: "https://youtu.be/1c4YPQTS35I",
     layout: "crazyeights"
   },
   {
@@ -29,7 +29,7 @@ Scoring:
 • First player out becomes President; last becomes Scum (Beggar/Arsehole).
 • Social rule: Scum gives their two best cards to President; President gives back any two cards.
 • Roles carry over to determine seating and card-exchange order in the next deal.`,
-    videoUrl: "https://youtu.be/n6UFbZ0jGWw",
+    videoUrl: "https://youtu.be/SeWq2p_1kMU",
     layout: "president"
   },
   {
@@ -45,7 +45,7 @@ The Play:
 • Challenged and caught lying: the liar takes the entire discard pile into their hand.
 • Challenged and truthful: the challenger takes the entire discard pile.
 Scoring: The first player to successfully shed all their cards wins.`,
-    videoQuery: "Cheat Bullshit card game how to play rules",
+    videoUrl: "https://youtu.be/H1-UG9SuQjI",
     layout: "cheat"
   },
   {
@@ -61,7 +61,7 @@ The Play:
 • Defender beaten: picks up all table cards and skips their next turn.
 • Defender successful: all cards discarded; defender becomes the next attacker.
 Scoring: Last player holding cards is the Durak and loses.`,
-    videoQuery: "Durak Russian card game how to play rules",
+    videoUrl: "https://youtu.be/3JagmUmUJOc",
     layout: "durak"
   },
   {
@@ -77,7 +77,7 @@ The Play:
 • A sequence stops when the next card is in the dead hand (a natural stop) or a King is reached.
 • The player who plays a boodle card (same rank and suit as a layout King) collects its tokens.
 Scoring: First player out wins one chip per remaining card from each opponent plus the kitty.`,
-    videoQuery: "Newmarket card game how to play rules",
+    videoUrl: "https://youtu.be/WkWhBS4axZY",
     layout: "stops"
   },
   {
@@ -93,7 +93,7 @@ The Play:
 • A completed King-high pile is shuffled back into the central stock.
 • End your turn by discarding one card face up to one of your four personal discard piles.
 Scoring: Winner scores 5 points plus 1 per card remaining in the loser's riddance pile.`,
-    videoQuery: "Spite and Malice card game how to play rules",
+    videoUrl: "https://youtu.be/quQIMZPqnHM",
     layout: "comppatience",
     handSpec: { caption: 'Spite & Malice' }
   },
@@ -110,7 +110,7 @@ The Play:
 • Reveal the next card in a stock pile as soon as the top is moved.
 • If both players stall, simultaneously slap a new spit card onto each centre pile to restart play.
 Scoring: First to empty their stock piles slaps the smaller central pile; the opponent takes the larger.`,
-    videoQuery: "Spit card game how to play rules speed",
+    videoUrl: "https://youtu.be/yv7k6XYzgSo",
     layout: "spit"
   },
   {
@@ -128,7 +128,7 @@ The Play:
 Scoring:
 • +1 point per card on shared central foundations.
 • −2 points per card remaining in your off-pile at the end.`,
-    videoQuery: "Racing Demon Nerts card game how to play rules",
+    videoUrl: "https://youtu.be/SXX7lc1rYew",
     layout: "comppatience",
     handSpec: { leftLabel: 'Your pile', rightLabel: 'Others', caption: 'Racing Demon' }
   },

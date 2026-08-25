@@ -15,7 +15,7 @@ Scoring:
 • Each hand is then scored with the starter as a fifth card — non-dealer's hand first, which decides many close games — and the dealer scores the crib last.
 • Fifteens: 2 for every combination totalling 15. Pairs: 2 each. Runs: 1 per card. Flush: 4 in hand, 5 with the starter. His nob (the Jack matching the starter's suit): 1.
 • Game: 121 points, twice round the board.`,
-    videoQuery: "Cribbage card game rules how to play pegging",
+    videoUrl: "https://youtu.be/kHHgH-Bif-M",
     layout: "cribbage"
   },
   {
@@ -34,7 +34,7 @@ Scoring:
 • A winning hand pays even money; a natural pays 3-to-2.
 • A tie is a push — the stake is returned.
 • Insurance, offered when the dealer shows an Ace, pays 2-to-1 if the dealer has blackjack.`,
-    videoQuery: "Blackjack card game rules how to play basic strategy",
+    videoUrl: "https://youtu.be/xjqTIzYkGdI",
     layout: "pontoon",
     handSpec: { badge: 'Blackjack! (21)', caption: 'Blackjack' }
   },
@@ -53,7 +53,7 @@ Scoring:
 • Pontoon (an Ace with a ten-count card): pays 2-to-1.
 • Five-card trick (five cards totalling 21 or under): pays 2-to-1.
 • Banker wins all ties.`,
-    videoQuery: "Pontoon Blackjack British card game how to play rules",
+    videoUrl: "https://youtu.be/b149_Mjq2ow",
     layout: "pontoon",
     handSpec: { caption: 'Pontoon' }
   },

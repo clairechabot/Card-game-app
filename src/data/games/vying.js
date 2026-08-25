@@ -14,7 +14,7 @@ The Play:
 Scoring:
 • The last player left in, or the winner of a showdown, takes the whole pot.
 • Three 3s is the highest prial of all, outranking three Aces.`,
-    videoQuery: "Brag card game rules how to play three card brag",
+    videoUrl: "https://youtu.be/L8CxIt9urFY",
     layout: "poker",
     handSpec: { cards: ['A♠', 'A♥', 'A♦'], draw: false, caption: 'Three-Card Brag' }
   },
@@ -31,7 +31,7 @@ The Play:
 • Betting round 2: final bets made before showdown.
 • Showdown: remaining players reveal hands; best hand wins the pot.
 Scoring: Standard hand rankings from highest to lowest — Royal Flush, Straight Flush, Four of a Kind, Full House, Flush, Straight, Three of a Kind, Two Pair, One Pair, High Card.`,
-    videoQuery: "Draw Poker five card how to play rules",
+    videoUrl: "https://youtu.be/-OcfEkOeC-w",
     layout: "poker"
   },
 ];
