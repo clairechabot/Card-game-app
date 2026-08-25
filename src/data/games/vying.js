@@ -1,5 +1,23 @@
 export const vying = [
   {
+    title: "Brag",
+    category: "Vying",
+    players: "3–8 Players",
+    blurb: "Britain's older answer to Poker — three cards each, and the nerve to keep raising on a hand you have never even looked at.",
+    instructions: `Preliminaries: Three to eight players. 52-card pack. Three cards each, dealt face down. All players ante before the deal. Cards rank A K Q J T 9 8 7 6 5 4 3 2, but three 3s beats everything.
+Object: Hold — or convincingly represent — the best three-card hand and take the pot.
+The Play:
+• Betting passes clockwise. On your turn either stake at least as much as the previous player or fold and drop out.
+• A player may bet "blind", without ever looking at their cards, and stakes only half as much as a player who has seen theirs.
+• A player who has seen their cards may not see a blind player; betting continues until two remain, and one pays double to see the other.
+• Hand ranking, high to low: prial (three of a kind), running flush, run, flush, pair, high card.
+Scoring:
+• The last player left in, or the winner of a showdown, takes the whole pot.
+• Three 3s is the highest prial of all, outranking three Aces.`,
+    videoQuery: "Brag card game rules how to play three card brag",
+    layout: "poker"
+  },
+  {
     title: "Poker",
     category: "Vying",
     players: "2–8 Players",

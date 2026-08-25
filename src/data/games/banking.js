@@ -1,21 +1,40 @@
 export const banking = [
   {
-    title: "Pontoon",
+    title: "Baccarat",
+    category: "Banking",
+    subType: "Punto Banco",
+    players: "2+ Players",
+    blurb: "Bet on Player or Banker and then watch — every draw is fixed by the table, making this the purest banking game of them all.",
+    instructions: `Preliminaries: Any number of bettors against the bank, using six or eight 52-card packs. Court cards and tens count zero, Aces one, all others face value. Only the last digit of a total counts, so a hand can never exceed nine.
+Object: Bet on whichever of the two hands — Player or Banker — will finish closer to nine.
+The Play:
+• Stake on Player, Banker, or Tie before the deal. The bettors make no other decisions all coup.
+• Two cards are dealt to each of the two hands. A total of 8 or 9 is a "natural" and both hands stand.
+• The Player hand draws a third card on 0–5 and stands on 6 or 7.
+• The Banker's third card is then dictated by a fixed table, depending on the Banker's total and the value of the Player's third card.
+Scoring:
+• Player bet: pays even money.
+• Banker bet: pays even money less 5% commission, reflecting its small edge.
+• Tie: pays 8-to-1, and Player and Banker stakes are returned.`,
+    videoQuery: "Baccarat punto banco rules how to play third card rule",
+    layout: "baccarat"
+  },
+  {
+    title: "Faro",
     category: "Banking",
     players: "2+ Players",
-    blurb: "Beat the banker's hand by accumulating cards totalling closer to 21 without busting — hit Pontoon (Ace + ten-value) for the highest payout.",
-    instructions: `Preliminaries: Any number of players using one or more 52-card packs. Banker deals one card face down to each player including themselves.
-Object: End up with a card total higher than the banker's without exceeding 21. Ace counts 1 or 11; face cards count 10.
+    blurb: "The banking game of the frontier saloon — stake on any rank of a painted layout and bet on whether it falls to the bank or to the punters.",
+    instructions: `Preliminaries: Any number of punters against a banker. 52-card pack. A full suit of thirteen cards is spread face up as the betting layout; only rank matters, never suit.
+Object: Predict whether a chosen rank will fall to the banker or to the punters.
 The Play:
-• Players stake chips on their first card; banker deals a second card.
-• Options on your turn — Buy: stake more chips (up to double), receive a card face down. Twist: receive a card face up, free. Stick: play with current total (must be 15 or higher to stick).
-• Bust (exceed 21): immediately pay the banker and turn cards face up.
-• Banker reveals hand last and must draw to beat or match players.
+• Punters place stakes on any rank of the layout, and may move or withdraw them between turns.
+• The banker burns the top card, then deals two cards per turn: the first is the banker's card and loses for the punters; the second wins for them.
+• A stake may be "coppered" — marked with a token — to reverse the bet, backing the rank to lose instead of win.
+• A "split", where both cards of a turn share a rank, lets the banker take half the stakes on it.
 Scoring:
-• Pontoon (Ace + any 10-value card on first two cards): pays 2-to-1.
-• Five-card trick (five cards totalling 21 or under): pays 2-to-1.
-• Banker wins all ties.`,
-    videoQuery: "Pontoon Blackjack British card game how to play rules",
-    layout: "pontoon"
+• Winning bets pay even money.
+• Calling the turn — naming the order of the final three cards — pays 4-to-1.`,
+    videoQuery: "Faro card game rules how to play banking layout",
+    layout: "faro"
   },
 ];

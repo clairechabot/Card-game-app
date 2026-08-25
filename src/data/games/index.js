@@ -1,12 +1,12 @@
-import { slugify } from '../../lib/slug';
-import { trickTaking } from './trickTaking';
-import { cardTaking } from './cardTaking';
-import { addingUp } from './addingUp';
-import { shedding } from './shedding';
-import { collecting } from './collecting';
-import { patience } from './patience';
-import { vying } from './vying';
-import { banking } from './banking';
+import { slugify } from '../../lib/slug.js';
+import { trickTaking } from './trickTaking.js';
+import { cardTaking } from './cardTaking.js';
+import { addingUp } from './addingUp.js';
+import { shedding } from './shedding.js';
+import { collecting } from './collecting.js';
+import { patience } from './patience.js';
+import { vying } from './vying.js';
+import { banking } from './banking.js';
 
 /**
  * Every game, in mechanism order, each stamped with its derived slug.

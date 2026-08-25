@@ -1,4 +1,4 @@
-import { Card, Container } from './Card';
+import { Card, Container, Caption } from './Card';
 import { PatienceLayout } from './PatienceLayout';
 
 /**
@@ -480,6 +480,207 @@ export function GameVisualizer({ game }) {
           <div className="absolute bottom-2 right-2 text-[10px] text-cyan-500/50 uppercase tracking-widest">Banking Layout</div>
         </Container>
       );
+    // ── Contract Bridge (dummy exposed) ───────────────────────────────────
+    case 'bridge':
+      return (
+        <Container>
+          <div className="relative w-52 h-44">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-0.5">
+              <div className="flex gap-0.5">
+                <Card label="A♠" size="xs" color="bg-white/15" />
+                <Card label="K♥" size="xs" color="bg-white/15" />
+                <Card label="Q♦" size="xs" color="bg-white/15" />
+                <Card label="7♣" size="xs" color="bg-white/15" />
+              </div>
+              <span className="text-[7px] text-amber-400 uppercase tracking-wide">Dummy (face up)</span>
+            </div>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-0.5">
+              <div className="flex gap-0.5">
+                <Card size="xs" color="bg-cyan-500/20" />
+                <Card size="xs" color="bg-cyan-500/20" />
+                <Card size="xs" color="bg-cyan-500/20" />
+              </div>
+              <span className="text-[7px] text-cyan-400 uppercase tracking-wide">Declarer</span>
+            </div>
+            <div className="absolute left-0 top-1/2 -translate-y-1/2"><Card size="xs" color="bg-zinc-700/50" /></div>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2"><Card size="xs" color="bg-zinc-700/50" /></div>
+            <div className="absolute inset-0 m-auto w-24 h-14 border border-zinc-700 rounded-lg bg-zinc-800/60 flex flex-col items-center justify-center">
+              <span className="text-[9px] font-bold text-fuchsia-300">4♠</span>
+              <span className="text-[7px] text-zinc-500">contract · 10 tricks</span>
+            </div>
+          </div>
+          <Caption>Bridge Table</Caption>
+        </Container>
+      );
+
+    // ── Rummy family (Rummy, Gin Rummy, Canasta) ──────────────────────────
+    case 'rummy':
+      return (
+        <Container>
+          <div className="flex flex-col items-center gap-3">
+            <div className="flex items-end gap-6">
+              <div className="flex flex-col items-center gap-1">
+                <Card label="Stock" color="bg-blue-900/40" />
+                <span className="text-[8px] text-zinc-500">Draw</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <Card label="8♦" color="bg-white/10" />
+                <span className="text-[8px] text-zinc-500">Discard</span>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex -space-x-4">
+                  <Card label="7♥" size="sm" color="bg-emerald-700/30" />
+                  <Card label="8♥" size="sm" color="bg-emerald-700/30" />
+                  <Card label="9♥" size="sm" color="bg-emerald-700/30" />
+                </div>
+                <span className="text-[7px] text-emerald-400">Run</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex -space-x-4">
+                  <Card label="Q♠" size="sm" color="bg-teal-700/30" />
+                  <Card label="Q♦" size="sm" color="bg-teal-700/30" />
+                  <Card label="Q♣" size="sm" color="bg-teal-700/30" />
+                </div>
+                <span className="text-[7px] text-teal-400">Set</span>
+              </div>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <div className="flex gap-1">
+                <Card size="sm" color="bg-cyan-500/20" />
+                <Card size="sm" color="bg-cyan-500/20" />
+                <Card size="sm" color="bg-cyan-500/20" />
+                <Card size="sm" color="bg-cyan-500/20" />
+              </div>
+              <span className="text-[8px] text-zinc-500">Your hand</span>
+            </div>
+          </div>
+          <Caption>Melds & Stock</Caption>
+        </Container>
+      );
+
+    // ── Cribbage ──────────────────────────────────────────────────────────
+    case 'cribbage':
+      return (
+        <Container>
+          <div className="flex flex-col items-center gap-3 w-full max-w-xs">
+            <div className="w-full rounded-lg border border-zinc-700 bg-zinc-800/50 px-2 py-1.5">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-[7px] text-zinc-500 uppercase tracking-wide">Peg board</span>
+                <span className="text-[7px] text-fuchsia-400 font-bold">121</span>
+              </div>
+              <div className="flex gap-[3px]">
+                {Array.from({ length: 24 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className={`w-1 h-1 rounded-full ${i === 9 ? 'bg-fuchsia-400' : i === 14 ? 'bg-cyan-400' : 'bg-zinc-600'}`}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="flex items-end gap-4">
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex gap-0.5">
+                  <Card label="5♥" size="sm" color="bg-cyan-500/20" />
+                  <Card label="5♠" size="sm" color="bg-cyan-500/20" />
+                  <Card label="J♦" size="sm" color="bg-cyan-500/20" />
+                  <Card label="4♣" size="sm" color="bg-cyan-500/20" />
+                </div>
+                <span className="text-[8px] text-zinc-500">Your hand</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <Card label="5♦" size="sm" color="bg-amber-600/30" />
+                <span className="text-[8px] text-amber-500">Starter</span>
+              </div>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <div className="flex -space-x-5 opacity-60">
+                <Card size="sm" color="bg-blue-900/40" />
+                <Card size="sm" color="bg-blue-900/40" />
+                <Card size="sm" color="bg-blue-900/40" />
+                <Card size="sm" color="bg-blue-900/40" />
+              </div>
+              <span className="text-[8px] text-zinc-500">Crib (dealer&apos;s)</span>
+            </div>
+          </div>
+          <Caption>Cribbage</Caption>
+        </Container>
+      );
+
+    // ── Baccarat / Punto Banco ────────────────────────────────────────────
+    case 'baccarat':
+      return (
+        <Container>
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex items-start gap-6 md:gap-10">
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex gap-1">
+                  <Card label="7♥" color="bg-cyan-500/20" />
+                  <Card label="2♣" color="bg-cyan-500/20" />
+                </div>
+                <span className="text-[8px] text-cyan-400 uppercase tracking-wide">Player · 9</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex gap-1">
+                  <Card label="K♠" color="bg-violet-500/20" />
+                  <Card label="4♦" color="bg-violet-500/20" />
+                </div>
+                <span className="text-[8px] text-violet-400 uppercase tracking-wide">Banker · 4</span>
+              </div>
+            </div>
+            <div className="flex gap-2">
+              {['Player', 'Banker', 'Tie'].map((box) => (
+                <div
+                  key={box}
+                  className="px-2 py-1 rounded border border-zinc-700 bg-zinc-800/60 text-[7px] text-zinc-400 uppercase tracking-wide"
+                >
+                  {box}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="absolute top-3 left-3 text-[8px] text-zinc-500 leading-4">Only the last digit<br />of a total counts</div>
+          <Caption>Punto Banco</Caption>
+        </Container>
+      );
+
+    // ── Faro ──────────────────────────────────────────────────────────────
+    case 'faro':
+      return (
+        <Container>
+          <div className="flex flex-col items-center gap-3">
+            <div className="grid grid-cols-7 gap-1">
+              {['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'].map((rank) => (
+                <div
+                  key={rank}
+                  className="w-5 h-6 md:w-6 md:h-7 rounded-sm border border-zinc-600 bg-zinc-800/60 flex items-center justify-center text-[7px] font-bold text-zinc-400"
+                >
+                  {rank}
+                </div>
+              ))}
+              <div className="w-5 h-6 md:w-6 md:h-7 rounded-full bg-amber-400/60 border border-amber-500/50" />
+            </div>
+            <span className="text-[7px] text-zinc-500 uppercase tracking-wide">Betting layout · one suit</span>
+            <div className="flex items-end gap-4">
+              <div className="flex flex-col items-center gap-1">
+                <Card label="9♣" size="sm" color="bg-rose-800/40" />
+                <span className="text-[7px] text-rose-400">Banker wins</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <Card label="4♥" size="sm" color="bg-emerald-700/40" />
+                <span className="text-[7px] text-emerald-400">Punters win</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <Card size="sm" color="bg-blue-900/40" />
+                <span className="text-[7px] text-zinc-500">Box</span>
+              </div>
+            </div>
+          </div>
+          <Caption>Faro Layout</Caption>
+        </Container>
+      );
+
     default:
       return null;
   }

@@ -1,5 +1,45 @@
 export const trickTaking = [
   {
+    title: "Whist",
+    category: "Trick-Taking",
+    subType: "Plain-trick",
+    players: "4 Players",
+    blurb: "The ancestor of Bridge, stripped to its essentials — no bidding at all, just partnership play for every trick above six.",
+    instructions: `Preliminaries: Four players in fixed partnerships sitting crosswise. 52-card pack ranked A K Q J T 9 8 7 6 5 4 3 2. Thirteen cards each; the dealer's last card is turned face up to fix the trump suit, then taken into hand.
+Object: Win more than six tricks — only the tricks above six, the "odd tricks", score.
+The Play:
+• Eldest hand leads to the first trick. There is no bidding and no contract.
+• Players must follow suit if able; otherwise they may play any card, including a trump.
+• The highest card of the suit led wins the trick, unless trumped, in which case the highest trump wins.
+• The winner of each trick leads to the next.
+Scoring:
+• 1 point for each trick above six taken by a partnership.
+• Honours — the Ace, King, Queen and Jack of trumps — score 4 points to a side holding all four, or 2 for holding three.
+• Game: 5 points. A rubber is the best of three games.`,
+    videoQuery: "Whist card game rules how to play partnership",
+    layout: "tricktaking"
+  },
+  {
+    title: "Contract Bridge",
+    category: "Trick-Taking",
+    subType: "Plain-trick",
+    players: "4 Players",
+    blurb: "The great partnership game — an auction fixes the contract and the trumps, then declarer plays both their own hand and the exposed dummy.",
+    instructions: `Preliminaries: Four players in fixed partnerships. 52-card pack. Thirteen cards each. An auction precedes play and fixes both the contract and the trump suit.
+Object: Bid a contract and then take at least the number of tricks it commits you to.
+The Play:
+• Bidding: each bid names a level from 1 to 7 and a denomination — clubs, diamonds, hearts, spades or no-trump. The level plus six is the number of tricks contracted for. The auction ends after three consecutive passes.
+• The player who first named the winning denomination for their side becomes declarer; their partner becomes dummy.
+• The player to declarer's left leads. Dummy's hand is then laid face up and played from by declarer.
+• Follow suit if possible. The highest trump wins the trick, otherwise the highest card of the suit led.
+Scoring:
+• Odd tricks — those above six — score 20 each in clubs or diamonds, 30 each in hearts or spades, and 40 for the first plus 30 for each further trick in no-trump.
+• 100 or more trick points makes a game; two games win the rubber.
+• Bonuses for a small slam (twelve tricks) and grand slam (all thirteen). Undertricks are penalised, and more heavily when doubled or vulnerable.`,
+    videoQuery: "Contract Bridge rules how to play bidding declarer dummy",
+    layout: "bridge"
+  },
+  {
     title: "Spades",
     category: "Trick-Taking",
     subType: "Plain-trick",
