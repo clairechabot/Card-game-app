@@ -49,7 +49,7 @@ Scoring:
     instructions: `Preliminaries: Four players in fixed partnerships. 52-card pack ranked A K Q J T 9 8 7 6 5 4 3 2. Thirteen cards dealt each. Spades are always trump.
 Object: Each partnership bids a minimum number of tricks to win, or a player may bid Nil to lose every trick.
 The Play:
-• Eldest must lead their lowest Club; the highest Club wins the first trick and leads next.
+• Eldest leads any card except a spade, since spades are not yet broken.
 • Players must follow suit if possible; otherwise they may play any card.
 • Spades may not be led until the suit is "broken" by a spade played on a void.
 Scoring:
@@ -88,10 +88,10 @@ Scoring:
     subType: "Plain-trick",
     players: "3–6 Players",
     blurb: "An avoidance game where hearts and the Queen of Spades score penalty points — unless you dare to shoot the moon.",
-    instructions: `Preliminaries: Three to six players. 52-card pack. Thirteen cards dealt each. Players pass three cards to a neighbour before play.
+    instructions: `Preliminaries: Three to six players. Cards are stripped so the pack deals evenly: four players take the full 52 and thirteen each; three players remove the 2♦ and take seventeen each; five remove the 2♦ and 2♣ for ten each; six remove the 2♦, 2♣, 3♣ and 2♠ for eight each. Players pass three cards to a neighbour before play.
 Object: Avoid winning tricks containing hearts or the Queen of Spades.
 The Play:
-• Holder of the 2♣ leads first.
+• The holder of the lowest club leads first — the 2♣ where it is still in the pack.
 • Players must follow suit if possible.
 • Hearts may not be led until the suit is "broken" by a heart discarded on a void.
 Scoring:

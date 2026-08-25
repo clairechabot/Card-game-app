@@ -108,6 +108,53 @@ for (const game of games) {
 }
 
 /**
+ * The deal has to be physically possible.
+ *
+ * Hearts claimed "three to six players, 52-card pack, thirteen cards dealt
+ * each" — six players would need 78 cards out of a 52-card pack. Real Hearts
+ * strips cards so the pack divides evenly.
+ *
+ * Skipped when the text states more than one deal size (Rummy deals ten, seven
+ * or six depending on the player count), since a single number cannot then be
+ * checked against the maximum seat count.
+ */
+const NUMBER_WORDS = {
+  one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8,
+  nine: 9, ten: 10, eleven: 11, twelve: 12, thirteen: 13, fourteen: 14,
+  fifteen: 15, sixteen: 16, seventeen: 17, eighteen: 18, twenty: 20,
+};
+
+for (const game of games) {
+  const prelim = game.instructions.split('\n')[0];
+  const pack = prelim.match(/(\d+)-card pack/);
+  if (!pack) continue;
+
+  // A conditional deal — "Ten cards each for two players, seven for three or
+  // four" — cannot be reduced to a single number, so leave it alone. The
+  // "each for" is what marks the count as conditional on the player count.
+  if (/cards? (?:dealt )?(?:to )?each for/i.test(prelim)) continue;
+
+  const dealPhrases = prelim.match(/([A-Za-z]+|\d+) cards? (?:dealt )?(?:to )?each/gi) ?? [];
+  if (dealPhrases.length !== 1) continue;
+
+  const word = dealPhrases[0].split(/\s+/)[0].toLowerCase();
+  const deal = NUMBER_WORDS[word] ?? Number.parseInt(word, 10);
+  if (!Number.isFinite(deal)) continue;
+
+  const [, max] = parsePlayerRange(game.players);
+  if (!Number.isFinite(max)) continue;
+
+  const packSize = Number.parseInt(pack[1], 10);
+  if (deal * max > packSize) {
+    fail(
+      game,
+      `deal is impossible — ${max} players × ${deal} cards = ${deal * max}, ` +
+        `but the pack has only ${packSize}`
+    );
+  }
+}
+
+/**
  * The drift this file exists to catch, stated generally.
  *
  * A bespoke diagram may be shared by several games only if all but one of them

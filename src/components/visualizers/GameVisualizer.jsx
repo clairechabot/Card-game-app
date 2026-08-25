@@ -10,6 +10,13 @@ import { TrickTable } from './TrickTable';
  */
 export function GameVisualizer({ game }) {
   const hand = game.handSpec ?? {};
+  // Rendered by the shared cases so a borrowed diagram can still state
+  // the rule that makes this particular game different.
+  const note = hand.note ? (
+    <div className="absolute top-2 left-3 text-[8px] md:text-[9px] text-zinc-500 leading-snug max-w-[45%]">
+      {hand.note}
+    </div>
+  ) : null;
   if (game.layoutSpec) return <PatienceLayout spec={game.layoutSpec} title={game.title} />;
   if (game.tableSpec) return <TrickTable spec={game.tableSpec} title={game.title} />;
 
@@ -46,6 +53,7 @@ export function GameVisualizer({ game }) {
               </div>
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Cassino Layout'}</Caption>
         </Container>
       );
@@ -59,26 +67,27 @@ export function GameVisualizer({ game }) {
               <div className="flex flex-col -space-y-9">
                 <Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" /><Card color="bg-blue-900/40" />
               </div>
-              <span className="text-[8px] text-zinc-500 mt-2">P1 Deck</span>
+              <span className="text-[8px] text-zinc-500 mt-2">{hand.leftLabel ?? 'P1 Deck'}</span>
             </div>
             <div className="flex flex-col items-center gap-2">
               <div className="flex gap-3 items-center">
                 <Card label="K♣" color="bg-blue-500/20" />
-                <span className="text-zinc-500 text-xs font-bold">VS</span>
+                <span className="text-zinc-500 text-xs font-bold">{hand.centre ?? 'VS'}</span>
                 <Card label="9♥" color="bg-rose-500/20" />
               </div>
               <div className="flex gap-1 opacity-30">
                 <Card color="bg-white/5" /><Card color="bg-white/5" /><Card color="bg-white/5" />
               </div>
-              <span className="text-[8px] text-zinc-600">War stake</span>
+              <span className="text-[8px] text-zinc-600">{hand.stakeLabel ?? 'War stake'}</span>
             </div>
             <div className="flex flex-col items-center gap-1">
               <div className="flex flex-col -space-y-9">
                 <Card color="bg-rose-900/40" /><Card color="bg-rose-900/40" /><Card color="bg-rose-900/40" />
               </div>
-              <span className="text-[8px] text-zinc-500 mt-2">P2 Deck</span>
+              <span className="text-[8px] text-zinc-500 mt-2">{hand.rightLabel ?? 'P2 Deck'}</span>
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Battle Setup'}</Caption>
         </Container>
       );
@@ -113,6 +122,7 @@ export function GameVisualizer({ game }) {
               <span className="text-[8px] text-zinc-500">Hand <span className="text-amber-400">(8=Wild)</span></span>
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Crazy Eights'}</Caption>
         </Container>
       );
@@ -151,6 +161,7 @@ export function GameVisualizer({ game }) {
             </div>
           </div>
           <div className="absolute top-2 left-2 text-[8px] text-amber-400/70">★ President  ✕ Scum</div>
+          {note}
           <Caption>{hand.caption ?? 'Climbing Game'}</Caption>
         </Container>
       );
@@ -182,6 +193,7 @@ export function GameVisualizer({ game }) {
             </div>
           </div>
           <div className="absolute top-3 left-1/2 -translate-x-1/2 text-[9px] text-zinc-500 italic whitespace-nowrap">"Three Tens" (face down)</div>
+          {note}
           <Caption>{hand.caption ?? 'Cheat Layout'}</Caption>
         </Container>
       );
@@ -221,6 +233,7 @@ export function GameVisualizer({ game }) {
               </div>
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Durak Setup'}</Caption>
         </Container>
       );
@@ -257,6 +270,7 @@ export function GameVisualizer({ game }) {
               </div>
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Boodle Layout'}</Caption>
         </Container>
       );
@@ -285,6 +299,7 @@ export function GameVisualizer({ game }) {
               </div>
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Piquet Setup'}</Caption>
         </Container>
       );
@@ -318,6 +333,7 @@ export function GameVisualizer({ game }) {
               <span className="text-[8px] text-purple-400/70 mt-1">{hand.rightLabel ?? 'P2 Pile'}</span>
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Racing Layout'}</Caption>
         </Container>
       );
@@ -357,6 +373,7 @@ export function GameVisualizer({ game }) {
               ))}
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Spit Layout'}</Caption>
         </Container>
       );
@@ -397,6 +414,7 @@ export function GameVisualizer({ game }) {
               <span className="text-[8px] text-zinc-500">Your hand</span>
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Draw Poker'}</Caption>
         </Container>
       );
@@ -427,6 +445,7 @@ export function GameVisualizer({ game }) {
               </div>
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Banking Layout'}</Caption>
         </Container>
       );
@@ -459,6 +478,7 @@ export function GameVisualizer({ game }) {
               <span className="text-[7px] text-zinc-500">contract · 10 tricks</span>
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Bridge Table'}</Caption>
         </Container>
       );
@@ -513,6 +533,7 @@ export function GameVisualizer({ game }) {
               <span className="text-[8px] text-amber-400/80">Melds stay concealed until you knock</span>
             )}
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Melds & Stock'}</Caption>
         </Container>
       );
@@ -561,6 +582,7 @@ export function GameVisualizer({ game }) {
               <span className="text-[8px] text-zinc-500">Crib (dealer&apos;s)</span>
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Cribbage'}</Caption>
         </Container>
       );
@@ -598,6 +620,7 @@ export function GameVisualizer({ game }) {
             </div>
           </div>
           <div className="absolute top-3 left-3 text-[8px] text-zinc-500 leading-4">Only the last digit<br />of a total counts</div>
+          {note}
           <Caption>{hand.caption ?? 'Punto Banco'}</Caption>
         </Container>
       );
@@ -634,6 +657,7 @@ export function GameVisualizer({ game }) {
               </div>
             </div>
           </div>
+          {note}
           <Caption>{hand.caption ?? 'Faro Layout'}</Caption>
         </Container>
       );

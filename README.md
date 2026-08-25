@@ -1,6 +1,6 @@
 # Card Codex
 
-A reference codex of **61 card games**, classified by primary mechanism following David
+A reference codex of **66 card games**, classified by primary mechanism following David
 Parlett's *The Penguin Book of Card Games*.
 
 Card Codex is a rules reference, not a playable game. Each entry carries a blurb, structured
@@ -42,6 +42,7 @@ npm run dev      # http://localhost:5173
 | `npm run preview` | Serve the production build locally |
 | `npm run lint` | ESLint over the whole project |
 | `npm run validate` | Check the game catalogue's integrity (see below) |
+| `npm run check-links` | Verify every tutorial link resolves and names its game |
 
 ## Project layout
 
@@ -50,13 +51,14 @@ src/
   App.jsx                    shell: routing, filtering, layout
   data/
     categories.js            the eight mechanisms
-    games/                   61 records, one file per mechanism
+    games/                   66 records, one file per mechanism
   components/
     Sidebar, Header, HomeView, GameGrid, GameCard, GameModal, RulesText
     visualizers/
       Card.jsx               shared card + container primitives
       GameVisualizer.jsx     bespoke diagrams, keyed off `layout`
       PatienceLayout.jsx     patience diagrams, driven by `layoutSpec`
+      TrickTable.jsx         trick-taking tables, driven by `tableSpec`
   hooks/                     useHashRoute, useFavorites
   lib/                       slugify, player-range parsing
 ```
@@ -93,12 +95,19 @@ Then run `npm run validate`.
 
 `npm run validate` asserts that slugs are unique, every required field is present, every category
 resolves, every `layout` has a matching visualizer case, every patience game carries its own
-`layoutSpec`, every rules string uses the recognised section headings, and no category is empty.
-It runs in CI alongside lint and build.
+`layoutSpec` and every trick-taking game its own `tableSpec`, a shared diagram is only reused by
+games that say how they differ, the deal is arithmetically possible, every rules string uses the
+recognised section headings, and no category is empty. It runs in CI alongside lint and build.
 
-This exists because the catalogue is the product and it has drifted before: 31 patience games
-once shared three setup diagrams between them, so FreeCell was pictured as Klondike and Pyramid
-as Aces Up — the diagram contradicted the rules printed directly beneath it.
+`npm run check-links` is separate because it needs the network: it asks YouTube's oEmbed endpoint
+whether each `videoUrl` still resolves, and whether the video's real title names the game.
+
+These exist because the catalogue is the product and it keeps drifting. Three separate rounds of
+it have now been caught: 31 patience games shared three setup diagrams, so FreeCell was pictured
+as Klondike; Hearts claimed to deal thirteen cards each to as many as six players, which needs 78
+cards from a 52-card pack; and every one of the six tutorial links the app shipped opened a video
+about a different game. Each check above was added after one of those, so the same class of
+error fails the build instead of reaching a reader.
 
 ## Routing
 
